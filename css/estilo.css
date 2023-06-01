@@ -236,8 +236,21 @@ ul.navigation li a {
     width: 25px;
     padding-right: 7px;
     padding-bottom: 7px;
+   
 }
-
+.logo_nav:hover{
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 /*---------------------------------------------------------------------
 ----------------------------CONTENIDO----------------------------------
 ---------------------------------------------------------------------*/
@@ -423,6 +436,7 @@ figure.contenedor_fig .siguiente:hover {
 .foto_menu {
     /*Fotos de los recuadros del HOME y DESTINOS*/
     width: 100%;
+    height: 50%;
 }
 
 input {
