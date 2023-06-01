@@ -28,7 +28,10 @@ body {
     height: 100%;
     width: 100%;
 }
-
+a.link_tour{
+    display: flex;
+    justify-content: center;
+}
 
 /*---------------------------------------------------------------------
 ---------------------------ENCABEZADO----------------------------------
@@ -413,6 +416,7 @@ figure.contenedor_fig .siguiente:hover {
 
 .recuadros {
     /*Artículo del HOME y DESTINOS*/
+    
     display: flex;
     flex-wrap: wrap;
     flex: 1 0 33%;
@@ -426,6 +430,9 @@ figure.contenedor_fig .siguiente:hover {
 .recuadro {
 
     /*Section de un recuadro con una imagen y un párrafo del HOME y DESTINOS*/
+    display: flex;
+    flex-direction: column;
+    height: auto;
     margin: 1%;
     background-color: #6b9991;
     border: 3px solid #0083398a;
