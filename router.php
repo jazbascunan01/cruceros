@@ -8,7 +8,12 @@ if (!empty($_REQUEST['action'])) {
 } else {
     $action = 'home'; // acción por defecto si no envían
 }
-if($action=='home'){
-    $homec->show();
 
+switch ($action) {
+    case 'home':
+        $homec->show();
+        break;
+    case 'tours':
+        echo "En construccion";
+        break;
 }
