@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-01 14:41:18
+/* Smarty version 4.3.1, created on 2023-06-01 15:24:21
   from 'C:\xampp\htdocs\ejemplos\jazmin\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647891ee17c1b9_35620191',
+  'unifunc' => 'content_64789c05e35920_04544977',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37ca6e883ccf12fa9dc432c478cdfb280ac9318b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ejemplos\\jazmin\\templates\\header.tpl',
-      1 => 1685623227,
+      1 => 1685625854,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647891ee17c1b9_35620191 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64789c05e35920_04544977 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +61,7 @@ function content_647891ee17c1b9_35620191 (Smarty_Internal_Template $_smarty_tpl)
                     src="images/395-3953291_vacation-house-check-form-new-home-builder-icon.png" alt="logo home"><a
                     href="home" class="route" id="home">Home</a></li>
             <li class="item"><img class="logo_nav" id="nav_destinos" src="images/854996.png" alt="logo destinos"><a
-                    class="route" id="destino">Destinos</a></li>
+                    class="route" id="destino">Tours</a></li>
 
             <li class="item"><img class="logo_nav" id="nav_tipos" src="images/logo_tipos_de_viajes.png"
                     alt="logo tipos"><a class="route" id="tipos_de_viajes">Tipos de viajes</a></li>

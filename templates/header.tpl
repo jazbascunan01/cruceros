@@ -38,7 +38,7 @@
                     src="images/395-3953291_vacation-house-check-form-new-home-builder-icon.png" alt="logo home"><a
                     href="home" class="route" id="home">Home</a></li>
             <li class="item"><img class="logo_nav" id="nav_destinos" src="images/854996.png" alt="logo destinos"><a
-                    class="route" id="destino">Destinos</a></li>
+                    class="route" id="destino">Tours</a></li>
 
             <li class="item"><img class="logo_nav" id="nav_tipos" src="images/logo_tipos_de_viajes.png"
                     alt="logo tipos"><a class="route" id="tipos_de_viajes">Tipos de viajes</a></li>
