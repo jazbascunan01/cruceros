@@ -11,12 +11,13 @@ class toursModel{
        return $tours;
    }
 
-function gettour($id) {
+   function gettour($id) {
     $db = new PDO('mysql:host=localhost;'.'dbname=turismo_maritimo;charset=utf8', 'root', '');
-    $query = $db->prepare('SELECT * FROM tours WHERE id = ?'); // usamos ? como marcador
-    $query->execute([$id]); // pasamos el valor de $id como parámetro
-    $tour = $query->fetchAll(PDO::FETCH_OBJ);
+    $query = $db->prepare('SELECT * FROM tours WHERE id = ?');
+    $query->execute([$id]);
+    $tour = $query->fetch(PDO::FETCH_OBJ); // Cambio fetchAll() a fetch()
     return $tour;
 }
+
 
 }
