@@ -12,7 +12,6 @@ class TourController{
     public function show(){
         echo("Hola");
         $id = $_GET['id'] ?? 0; // si no hay id, se asigna 0
-
         $tour=$this->model->gettour($id);
         print_r($tour);
         $this->view->mostrar_tour($tour, $id);
