@@ -3,8 +3,10 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'
 
 require_once('controller/homeController.php');
 require_once('controller/toursController.php');
-$homec=new HomeController;
-$toursc=new ToursController;
+require_once('controller/tourController.php');
+$homec = new HomeController;
+$toursc = new ToursController;
+$tourc=new TourController;
 if (!empty($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
 } else {
@@ -17,5 +19,8 @@ switch ($action) {
         break;
     case 'tours':
         $toursc->show();
+        break;
+    case 'tour':
+        $tourc->show();
         break;
 }
