@@ -12,6 +12,6 @@ class crucerosController{
     }
     public function show(){
         $cruceros=$this->model->getcruceros();
-        $this->view->mostrar_home($cruceros);
+        $this->view->mostrar_crucero($cruceros);
     }
 }

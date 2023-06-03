@@ -5,10 +5,12 @@ require_once('controller/homeController.php');
 require_once('controller/toursController.php');
 require_once('controller/tourController.php');
 require_once('controller/crucerosController.php');
+require_once('controller/cruceroController.php');
 $toursc = new ToursController;
 $tourc = new TourController;
-$homec= new homeController;
-$crucerosc=new crucerosController;
+$homec = new homeController;
+$crucerosc = new crucerosController;
+$cruceroc = new cruceroController;
 if (!empty($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
 } else {
@@ -27,5 +29,8 @@ switch ($action) {
         break;
     case 'cruceros':
         $crucerosc->show();
+        break;
+    case 'crucero':
+        $cruceroc->show();
         break;
 }

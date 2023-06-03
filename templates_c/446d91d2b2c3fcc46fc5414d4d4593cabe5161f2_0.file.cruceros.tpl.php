@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-03 23:15:21
+/* Smarty version 4.3.1, created on 2023-06-03 23:29:33
   from 'C:\xampp\htdocs\ejemplos\jazmin\templates\cruceros.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647bad69ec86c9_45923545',
+  'unifunc' => 'content_647bb0bdb6f120_08497600',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '446d91d2b2c3fcc46fc5414d4d4593cabe5161f2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ejemplos\\jazmin\\templates\\cruceros.tpl',
-      1 => 1685826744,
+      1 => 1685827751,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_647bad69ec86c9_45923545 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647bb0bdb6f120_08497600 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="content">
@@ -39,11 +39,13 @@ $_smarty_tpl->tpl_vars['crucero']->do_else = false;
                 <section class="recuadro">
                     <img class="foto_menu" src=<?php echo $_smarty_tpl->tpl_vars['crucero']->value->img1;?>
  alt="Paisaje de montañas">
-                    <h4><?php echo $_smarty_tpl->tpl_vars['crucero']->value->nombre;?>
-</h4>
+                    <a class="link_tour" type="submit" href="crucero?id=<?php echo $_smarty_tpl->tpl_vars['crucero']->value->ID;?>
+"><h4><?php echo $_smarty_tpl->tpl_vars['crucero']->value->nombre;?>
+</h4></a>
                     <p><?php echo $_smarty_tpl->tpl_vars['crucero']->value->descripcion;?>
-
-                    </p>
+</p>
+                    <a class="link_tour" type="submit" href="crucero?id=<?php echo $_smarty_tpl->tpl_vars['crucero']->value->ID;?>
+">Leer mas</a>
                 </section>
             <?php ob_start();
 }
