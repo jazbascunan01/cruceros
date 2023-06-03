@@ -41,7 +41,7 @@
                     class="route" id="destino">Tours</a></li>
 
             <li class="item"><img class="logo_nav" id="nav_tipos" src="images/logo_tipos_de_viajes.png"
-                    alt="logo tipos"><a class="route" id="tipos_de_viajes">Tipos de viajes</a></li>
+                    alt="logo tipos"><a href="cruceros" class="route" id="tipos_de_viajes">cruceros</a></li>
             <li class="item" id="nosotros"><img class="logo_nav" id="nav_nosotros" src="images/logo_de_nosotross.png"
                     alt="logo nosotros"><a class="route" id="nosotross">Nosotros</a> </li>
             <li class="item" id="contacto"><img class="logo_nav" id="nav_contacto" src="images/logo_contacto.png"

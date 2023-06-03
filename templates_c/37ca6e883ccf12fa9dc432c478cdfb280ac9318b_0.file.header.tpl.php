@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-02 22:42:21
+/* Smarty version 4.3.1, created on 2023-06-03 23:04:40
   from 'C:\xampp\htdocs\ejemplos\jazmin\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647a542d1b6c96_52261936',
+  'unifunc' => 'content_647baae82f7cb0_87999544',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37ca6e883ccf12fa9dc432c478cdfb280ac9318b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ejemplos\\jazmin\\templates\\header.tpl',
-      1 => 1685628328,
+      1 => 1685826031,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647a542d1b6c96_52261936 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647baae82f7cb0_87999544 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +64,7 @@ function content_647a542d1b6c96_52261936 (Smarty_Internal_Template $_smarty_tpl)
                     class="route" id="destino">Tours</a></li>
 
             <li class="item"><img class="logo_nav" id="nav_tipos" src="images/logo_tipos_de_viajes.png"
-                    alt="logo tipos"><a class="route" id="tipos_de_viajes">Tipos de viajes</a></li>
+                    alt="logo tipos"><a href="cruceros" class="route" id="tipos_de_viajes">cruceros</a></li>
             <li class="item" id="nosotros"><img class="logo_nav" id="nav_nosotros" src="images/logo_de_nosotross.png"
                     alt="logo nosotros"><a class="route" id="nosotross">Nosotros</a> </li>
             <li class="item" id="contacto"><img class="logo_nav" id="nav_contacto" src="images/logo_contacto.png"

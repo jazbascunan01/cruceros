@@ -1,12 +1,13 @@
 <?php
 require_once('libs/Smarty.class.php');
-require_once('views/homeView.php');
+require_once('views/cruceroView.php');
 require_once('models/cruceroModel.php');
-class homeController{
+
+class crucerosController{
     private $view;
     private $model;
     public function __construct(){
-        $this->view= new homeView();
+        $this->view= new cruceroView();
         $this->model= new cruceroModel();
     }
     public function show(){
