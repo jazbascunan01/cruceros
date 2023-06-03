@@ -413,25 +413,25 @@ figure.contenedor_fig .siguiente:hover {
     cursor: pointer;
     /*cursor tipo mano*/
 }
-.fotos_destino_tour{
+.fotos_destino_tour, .fotos_crucero{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 3%;
 }
-.foto_1tour{
+.foto_1tour, .foto_1crucero{
     height: 400px;
     margin: 20px;
     border-radius: 30%;
     box-shadow: 7px 13px 37px #000;
     border: 3px solid #0083398a;
 }
-.tour_detalles{
+.tour_detalles, .crucero_detalles{
     width: 80%;
     text-align: justify;
     margin: 5%;
 }
-.tour{
+.tour, .crucero{
     justify-content: center;
     display: flex;
     flex-direction: column;

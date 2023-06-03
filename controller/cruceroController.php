@@ -16,10 +16,17 @@ class CruceroController {
     }
 
     public function show() {
-        $id = $_GET['id'];//Obtener id
-        $crucero = $this->model->getcrucero($id);//obtener el crucero con el id
-        $tours_id = $this->toursModel->getid($id);
-        $tour = $this->toursModel->gettour($tours_id);
-        $this->view->mostrar_cruc($crucero, $tour);
+        $id = $_GET['id']; // Obtener id
+        $crucero = $this->model->getcrucero($id); // Obtener el crucero con el id
+        $tours_ids = $this->toursModel->getids($id); // Obtener un arreglo de IDs de tours
+        $tours = array(); // Inicializar un arreglo vacío para almacenar los tours
+    
+        // Obtener los tours correspondientes a cada ID
+        foreach ($tours_ids as $tour_id) {
+            $tour = $this->toursModel->gettour($tour_id);
+            $tours[] = $tour; // Agregar el tour al arreglo
+        }
+    
+        $this->view->mostrar_cruc($crucero, $tours);
     }
 }
