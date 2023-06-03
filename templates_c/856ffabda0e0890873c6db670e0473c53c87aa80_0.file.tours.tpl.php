@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-02 22:42:24
+/* Smarty version 4.3.1, created on 2023-06-03 19:22:19
   from 'C:\xampp\htdocs\ejemplos\jazmin\templates\tours.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647a54306c50d0_96816239',
+  'unifunc' => 'content_647b76cbc027d7_05308603',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '856ffabda0e0890873c6db670e0473c53c87aa80' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ejemplos\\jazmin\\templates\\tours.tpl',
-      1 => 1685727582,
+      1 => 1685812935,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_647a54306c50d0_96816239 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647b76cbc027d7_05308603 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <article class="recuadros">
@@ -38,7 +38,7 @@ $_smarty_tpl->tpl_vars['tour']->do_else = false;
  alt="Paisaje de montañas">
         <?php echo $_smarty_tpl->tpl_vars['tour']->value->ID;?>
 
-        <a class="link_tour" type="submit" href="tour.phps?id=<?php echo $_smarty_tpl->tpl_vars['tour']->value->ID;?>
+        <a class="link_tour" type="submit" href="tour?id=<?php echo $_smarty_tpl->tpl_vars['tour']->value->ID;?>
 "><h4 class="link_tour"><?php echo $_smarty_tpl->tpl_vars['tour']->value->destino;?>
 </h4></a>
         <p><?php echo $_smarty_tpl->tpl_vars['tour']->value->descripcion;?>
