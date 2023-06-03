@@ -2,18 +2,24 @@
 require_once('libs/Smarty.class.php');
 require_once('views/toursView.php');
 require_once('models/toursModel.php');
-class TourController{
+require_once('models/cruceroModel.php');
+
+class TourController {
     private $view;
     private $model;
-    public function __construct(){
-        $this->view= new toursView();
-        $this->model= new toursModel();
+    private $cruceroModel;
+
+    public function __construct() {
+        $this->view = new toursView();
+        $this->model = new toursModel();
+        $this->cruceroModel = new cruceroModel();
     }
-    public function show(){
-        echo("Hola");
+
+    public function show() {
         $id = $_GET['id'];
-        $tour = $this->model->gettour($id); // Cambio gettours() a gettour()
-        print_r($tour);
-        $this->view->mostrar_tour($tour, $id);
+        $tour = $this->model->gettour($id);
+        $crucero_id = $tour->id_crucero;
+        $crucero = $this->cruceroModel->getcrucero($crucero_id);
+        $this->view->mostrar_tour($tour, $crucero);
     }
 }

@@ -413,7 +413,30 @@ figure.contenedor_fig .siguiente:hover {
     cursor: pointer;
     /*cursor tipo mano*/
 }
-
+.fotos_destino_tour{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+}
+.foto_1tour{
+    height: 400px;
+    margin: 20px;
+    border-radius: 30%;
+    box-shadow: 7px 13px 37px #000;
+    border: 3px solid #0083398a;
+}
+.tour_detalles{
+    width: 80%;
+    text-align: justify;
+    margin: 5%;
+}
+.tour{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .recuadros {
     /*Artículo del HOME y DESTINOS*/
     
