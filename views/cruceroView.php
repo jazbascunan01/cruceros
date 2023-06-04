@@ -1,12 +1,13 @@
 <?php
 class cruceroView
 {
-    function mostrar_crucero($cruceros)
-    {
+    function mostrar_crucero($cruceros, $tours) {
         $smarty = new Smarty();
         $smarty->assign('cruceros', $cruceros);
-        $smarty->display('templates/cruceros.tpl'); // muestro el template    
+        $smarty->assign('tours', $tours);
+        $smarty->display('templates/cruceros.tpl');
     }
+    
     function mostrar_cruc($crucero, $tour) {
         $smarty = new Smarty();
 
