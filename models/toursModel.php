@@ -30,5 +30,12 @@ class toursModel
         return $ids;
     }
 
-
+    public function getToursByCrucero($cruceroId) {
+        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
+        $query = $db->prepare('SELECT * FROM tours WHERE id_crucero = ?');
+        $query->execute([$cruceroId]);
+        $tours = $query->fetchAll(PDO::FETCH_OBJ);
+        return $tours;
+    }
+    
 }

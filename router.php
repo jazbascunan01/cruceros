@@ -33,4 +33,7 @@ switch ($action) {
     case 'crucero':
         $cruceroc->show();
         break;
+    case 'filtrar':
+        $toursc->filtrar();
+        break;
 }
