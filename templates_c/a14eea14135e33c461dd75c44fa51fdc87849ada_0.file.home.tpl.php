@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-02 22:42:21
+/* Smarty version 4.3.1, created on 2023-06-05 01:24:41
   from 'C:\xampp\htdocs\ejemplos\jazmin\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647a542d0bb2e0_13455694',
+  'unifunc' => 'content_647d1d39a12930_34283714',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_647a542d0bb2e0_13455694 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647d1d39a12930_34283714 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="content">

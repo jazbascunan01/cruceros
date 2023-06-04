@@ -1,31 +1,28 @@
 {include file="header.tpl"}
-
-<form action="tourByCrucero" method="GET">
-<select name="crucero_id">
-    <option value="">Todos los cruceros</option>
-    {if $cruceros}
-        {foreach $cruceros as $crucero}
-            <option value="{$crucero->ID}" {if $cruceroSeleccionado == $crucero->ID}selected{/if}>{$crucero->nombre}</option>
+<h2>Tours</h2>
+<form method="get" action="filtrar" class="formfilter">
+    <label class="labelfiltro" for="crucero">Seleccionar Crucero:</label>
+    <select class="selectfiltro" name="crucero" id="crucero">
+        {foreach from=$cruceros item=crucero}
+            <option value="{$crucero->ID}">{$crucero->nombre}</option>
         {/foreach}
-    {/if}
-</select>
+    </select>
 
-    <input type="submit" value="Mostrar Tours">
+    <button class="buttonfiltro" type="submit"><img class= "logo_nav" id= "btnfilter"src="images/6488674.png" alt="logo filtrar"></button>
 </form>
-
-
 <article class="recuadros">
+
     {foreach from=$tours item=$tour}
         <section class="recuadro">
-            <img class="foto_menu" src="{$tour->img1}" alt="Paisaje de montañas">
+            <img class="foto_menu" src={$tour->img1} alt="Paisaje de montañas">
             {$tour->ID}
-            <a class="link_tour" href="tour?id={$tour->ID}">
+            <a class="link_tour" type="submit" href="tour?id={$tour->ID}">
                 <h4 class="link_tour">{$tour->destino}</h4>
             </a>
             <p>{$tour->descripcion}</p>
-            <a class="link_tour" href="tour?id={$tour->ID}">Leer mas</a>
+            <a class="link_tour" type="submit" href="tour?id={$tour->ID}">Leer mas</a>
         </section>
-    {/foreach}
-</article>
+    {{/foreach}}
 
+</article>
 {include file="footer.tpl"}

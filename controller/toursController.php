@@ -2,39 +2,36 @@
 require_once('libs/Smarty.class.php');
 require_once('views/toursView.php');
 require_once('models/toursModel.php');
-
-class ToursController {
+require_once('models/cruceroModel.php');
+class ToursController{
     private $view;
     private $model;
-    
-    public function __construct() {
-        $this->view = new toursView();
-        $this->model = new toursModel();
+    private $cruceromodel;
+    public function __construct(){
+        $this->view= new toursView();
+        $this->model= new toursModel();
+        $this->cruceromodel= new cruceroModel();
     }
-    
     public function show() {
+        $cruceros = $this->cruceromodel->getcruceros();
         $tours = $this->model->gettours();
-        $cruceros = $this->model->getcruceros();
-        $this->view->mostrar_tours($tours, $cruceros);
+        $this->view->mostrar_tours($cruceros, $tours); // Cambio de mostrar_tours a mostrar_tours
     }
-    
-    public function showByCrucero() {
-        $cruceroId = isset($_GET['crucero_id']) ? $_GET['crucero_id'] : null;
-        $tours = $this->model->getToursByCrucero($cruceroId);
-        $cruceros = $this->model->getcruceros();
-    
-        // Verificar si $cruceros es un array y ajustar su estructura si es necesario
-        if (is_array($cruceros)) {
-            $cruceros = array_map(function($crucero) {
-                return (object) [
-                    'ID' => $crucero['ID'],
-                    'nombre' => $crucero['nombre']
-                ];
-            }, $cruceros);
-        }
-    
-        $this->view->mostrar_tours($tours, $cruceros, $cruceroId);
-    }
-    
+
+public function filtrar()
+{
+    // Obtener el crucero seleccionado del formulario
+    $cruceroSeleccionado = $_GET['crucero'];
+
+    // Obtener los tours correspondientes al crucero seleccionado
+    $tours = $this->model->getToursByCrucero($cruceroSeleccionado);
+
+    // Obtener todos los cruceros para cargar el select
+    $cruceros = $this->cruceromodel->getCruceros();
+
+    // Asignar los datos a la vista
+    $this->view->mostrarToursFiltrados($cruceros, $tours);
+}
+
     
 }

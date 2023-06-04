@@ -413,6 +413,40 @@ figure.contenedor_fig .siguiente:hover {
     cursor: pointer;
     /*cursor tipo mano*/
 }
+.labelfiltro{
+    font-size: small;
+    height: auto;
+    padding: 0px;
+    margin: 0% 0.25%;
+}
+.selectfiltro{
+    font-size: small;
+    width: 10%;
+    height: auto;
+    padding: 0.2%;
+    margin: 0px;
+    margin: 0% 0.25%;
+}
+.buttonfiltro{
+    width: 5%;
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    margin: 0px;
+    margin: 0% 0.25%;
+}
+#btnfilter{
+    padding: 0%;
+    margin: 0px;
+}
+.formfilter{
+    display: flex;
+    justify-content: end;
+    padding: 0px;
+    align-items: center;
+    margin: 2%;
+}
 .fotos_destino_tour, .fotos_crucero{
     display: flex;
     justify-content: center;
