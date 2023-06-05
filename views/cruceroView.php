@@ -18,4 +18,10 @@ class cruceroView
             echo "El crucero no existe o no tiene una descripción válida.";
         }
     }
+    function mostrar_home($cruceros)
+    {
+        $smarty = new Smarty();
+        $smarty->assign('cruceros', $cruceros);
+        $smarty->display('templates/home.tpl'); // muestro el template    
+    }
 }

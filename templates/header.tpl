@@ -47,6 +47,6 @@
             <li class="item" id="contacto"><img class="logo_nav" id="nav_contacto" src="images/logo_contacto.png"
                     alt="logo contacto"><a class="route" id="contactos">Contacto</a> </li>
             <li class="item"><img class="logo_nav" id="nav_administrador" src="images/logo_administrador.png"
-                    alt="logo admin"><a class="route" id="administrador">Iniciar sesión</a></li>
+                    alt="logo admin"><a href="login" class="route" id="administrador">Iniciar sesión</a></li>
         </ul>
     </nav>

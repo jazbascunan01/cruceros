@@ -1,16 +1,12 @@
 <?php
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
-require_once('controller/homeController.php');
+
 require_once('controller/toursController.php');
-require_once('controller/tourController.php');
 require_once('controller/crucerosController.php');
-require_once('controller/cruceroController.php');
+require_once('controller/login.controller.php');
 $toursc = new ToursController;
-$tourc = new TourController;
-$homec = new homeController;
 $crucerosc = new crucerosController;
-$cruceroc = new cruceroController;
 if (!empty($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
 } else {
@@ -19,21 +15,32 @@ if (!empty($_REQUEST['action'])) {
 
 switch ($action) {
     case 'home':
-        $homec->show();
+        $crucerosc->show_home();
         break;
     case 'tours':
         $toursc->show();
         break;
     case 'tour':
-        $tourc->show();
+        $toursc->showTour();
         break;
     case 'cruceros':
         $crucerosc->show();
         break;
     case 'crucero':
-        $cruceroc->show();
+        $crucerosc->showCrucero();
         break;
     case 'filtrar':
         $toursc->filtrar();
+        break;
+    case 'login':
+        $controller = new LoginController();
+        $controller->showLogin();
+        break;
+    case 'verify':
+        $controller = new LoginController();
+        $controller->verifyUser();
+        break;
+    case 'Administrador':
+        echo "en construccion";
         break;
 }
