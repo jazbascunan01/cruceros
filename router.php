@@ -41,6 +41,7 @@ switch ($action) {
         $controller->verifyUser();
         break;
     case 'Administrador':
-        echo "en construccion";
+        $controller = new LoginController();
+        $controller->show();
         break;
 }

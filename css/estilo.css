@@ -28,7 +28,8 @@ body {
     height: 100%;
     width: 100%;
 }
-a.link_tour{
+
+a.link_tour {
     display: flex;
     justify-content: center;
 }
@@ -239,21 +240,25 @@ ul.navigation li a {
     width: 25px;
     padding-right: 7px;
     padding-bottom: 7px;
-   
+
 }
-.logo_nav:hover{
+
+.logo_nav:hover {
     animation-name: girar;
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
+
 @keyframes girar {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
+
 /*---------------------------------------------------------------------
 ----------------------------CONTENIDO----------------------------------
 ---------------------------------------------------------------------*/
@@ -413,13 +418,15 @@ figure.contenedor_fig .siguiente:hover {
     cursor: pointer;
     /*cursor tipo mano*/
 }
-.labelfiltro{
+
+.labelfiltro {
     font-size: small;
     height: auto;
     padding: 0px;
     margin: 0% 0.25%;
 }
-.selectfiltro{
+
+.selectfiltro {
     font-size: small;
     width: 10%;
     height: auto;
@@ -427,7 +434,8 @@ figure.contenedor_fig .siguiente:hover {
     margin: 0px;
     margin: 0% 0.25%;
 }
-.buttonfiltro{
+
+.buttonfiltro {
     width: 5%;
     font-size: smaller;
     display: flex;
@@ -436,44 +444,55 @@ figure.contenedor_fig .siguiente:hover {
     margin: 0px;
     margin: 0% 0.25%;
 }
-#btnfilter{
+
+#btnfilter {
     padding: 0%;
     margin: 0px;
 }
-.formfilter{
+
+.formfilter {
     display: flex;
     justify-content: end;
     padding: 0px;
     align-items: center;
     margin: 2%;
 }
-.fotos_destino_tour, .fotos_crucero{
+
+.fotos_destino_tour,
+.fotos_crucero {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 3%;
 }
-.foto_1tour, .foto_1crucero{
+
+.foto_1tour,
+.foto_1crucero {
     height: 400px;
     margin: 20px;
     border-radius: 30%;
     box-shadow: 7px 13px 37px #000;
     border: 3px solid #0083398a;
 }
-.tour_detalles, .crucero_detalles{
+
+.tour_detalles,
+.crucero_detalles {
     width: 80%;
     text-align: justify;
     margin: 5%;
 }
-.tour, .crucero{
+
+.tour,
+.crucero {
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .recuadros {
     /*Artículo del HOME y DESTINOS*/
-    
+
     display: flex;
     flex-wrap: wrap;
     flex: 1 0 33%;
@@ -484,6 +503,22 @@ figure.contenedor_fig .siguiente:hover {
     margin-top: 1%;
 }
 
+.recuadroadmin {
+    /*Section de un recuadro con una imagen y un párrafo del HOME y DESTINOS*/
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 1%;
+    background-color: #6b9991;
+    border: 3px solid #0083398a;
+    box-shadow: 7px 13px 37px #000;
+    border-radius: 7px;
+    width: 80%;
+}
+#recuadros_admin h2,h6{
+    margin: 1%;
+    margin-left: 5%;
+}
 .recuadro {
 
     /*Section de un recuadro con una imagen y un párrafo del HOME y DESTINOS*/
@@ -496,11 +531,36 @@ figure.contenedor_fig .siguiente:hover {
     box-shadow: 7px 13px 37px #000;
     border-radius: 7px;
 }
-
+.imagesadmin{
+    display: flex;
+}
 .foto_menu {
     /*Fotos de los recuadros del HOME y DESTINOS*/
     width: 100%;
     height: 50%;
+}
+.foto_menu_admin{
+    width: 45%;
+    margin: auto;
+    height: 100%;
+}
+.buttons_admin{
+    justify-content: center;
+    display: flex;
+    margin: 2%;
+    height: 6%;
+}
+.buttonadmin{
+    width: 20%;
+    height: 100%;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btnadmin{
+    width: 15%;
+    padding: 0%;
 }
 
 input {
@@ -534,11 +594,12 @@ button#pag_anterior {
     width: auto;
     font-size: small;
 }
+
 button#paginado_anterior:hover,
 /*Botones de anterior y siguiente para el paginado*/
 button#paginado_siguiente:hover,
 button#pag_siguiente:hover,
-button#pag_anterior:hover{
+button#pag_anterior:hover {
     cursor: pointer;
     background-color: #193e39;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
@@ -580,7 +641,8 @@ input[type="radio" i] {
     width: 5%;
     margin: 0;
 }
-.radio{
+
+.radio {
     width: 80%;
 }
 
@@ -1246,6 +1308,7 @@ footer {
         /*Los h4 dentro de una celda*/
         font-size: 20px;
     }
+
     table#ofertas td {
         font-size: 10px;
     }
@@ -1472,13 +1535,12 @@ footer {
         flex-direction: row;
     }
 
-/*     .recuadro {
+    /*     .recuadro {
         /* De las páginas HOME y DESTINOS */
-/*         width: 33%;
+    /*         width: 33%;
         margin: 1%; */
-   /*  } */ */
-
-    h5 {
+    /*  } */
+    */ h5 {
         font-size: small;
     }
 
@@ -1498,10 +1560,12 @@ footer {
         font-size: x-large;
         margin-left: 0px;
     }
+
     input[type="radio" i] {
         /*Inputs de tipo radio para el transporte de la página TURNOS*/
         width: 10%;
     }
+
     select {
         /* De todos los Selects */
         font-size: x-large;
@@ -1554,6 +1618,7 @@ footer {
     table#ofertas td {
         font-size: 13px;
     }
+
     .contenedor_opcion {
         /* Contenedor de los RADIO */
         margin-left: 0px;
@@ -1924,6 +1989,7 @@ footer {
         width: 40%;
         margin: 2%;
     }
+
     td.sol_y_playa {
         width: 30%;
     }
@@ -1964,6 +2030,7 @@ footer {
         /*Página de OFERTAS*/
         height: 500px;
     }
+
     td.sol_y_playa {
         width: 25%;
     }

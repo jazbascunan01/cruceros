@@ -1,15 +1,21 @@
 <?php
 include_once('./views/login.view.php');
 include_once('./models/user.model.php');
+include_once('controller/toursController.php');
+require_once('controller/crucerosController.php');
 
 class LoginController {
 
     private $view;
     private $model;
+    private $tourscontroller;
+    private $cruceroscontroller;
 
     public function __construct() {
         $this->view = new LoginView();
         $this->model = new UserModel();
+        $this->tourscontroller = new ToursController();
+        $this->cruceroscontroller = new crucerosController();
     }
 
     public function showLogin() {
@@ -28,6 +34,18 @@ class LoginController {
         } else {
             $this->view->showLogin("Login incorrecto");
         }
-       
     }
+    public function getAlltours(){
+        return $this->tourscontroller->getModel()->gettours();
+    }
+    public function getAllcruceros(){
+        return $this->cruceroscontroller->getModel()->getcruceros();
+    }
+    public function show()
+    {
+        $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
+        $tours = $this->getAlltours();//obtener todos los tours del model
+        $this->view->mostrar_tours($cruceros, $tours);
+    }
+
 }

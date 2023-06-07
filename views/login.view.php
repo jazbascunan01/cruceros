@@ -16,4 +16,10 @@ class LoginView {
         $this->smarty->display('templates/login.tpl');
     }
 
+    function mostrar_tours($cruceros, $tours) {
+        $smarty = new Smarty();
+        $smarty->assign('cruceros', $cruceros); // Asignar la lista de cruceros
+        $smarty->assign('tours', $tours); // Asignar la lista de tours
+        $smarty->display('templates/administrador.tpl'); // Mostrar el template
+    }
 }
