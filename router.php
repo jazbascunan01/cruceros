@@ -40,8 +40,12 @@ switch ($action) {
         $controller = new LoginController();
         $controller->verifyUser();
         break;
-    case 'Administrador':
+    case 'Opciones':
         $controller = new LoginController();
-        $controller->show();
+        $controller->showOptions();
+        break;
+    case 'AdministrarTours':
+        $controller = new LoginController();
+        $controller->show_tours();
         break;
 }

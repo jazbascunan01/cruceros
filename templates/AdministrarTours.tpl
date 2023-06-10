@@ -16,8 +16,7 @@
             <img class="foto_menu_admin" src={$tour->img1} alt="Paisaje de montañas">
             <img class="foto_menu_admin" src={$tour->img2} alt="Paisaje de montañas">
         </section>
-        <h6>ID del crucero: {$tour->id_crucero} </h6>
-        </a>
+        <h6>Nombre del crucero: {$cruceros[$tour->id_crucero]->nombre} </h6>
         <h6>Fecha de salida: {$tour->fecha_salida} </h6>
         <h6>Precio: {$tour->precio} </h6>
         <h6>Descripcion: {$tour->descripcion}</h6>

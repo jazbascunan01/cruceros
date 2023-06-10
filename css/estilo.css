@@ -544,6 +544,11 @@ figure.contenedor_fig .siguiente:hover {
     margin: auto;
     height: 100%;
 }
+.foto_menu_options {
+    width: 100%;
+    height: 70%;
+    margin-bottom: 5%;
+}
 .buttons_admin{
     justify-content: center;
     display: flex;
