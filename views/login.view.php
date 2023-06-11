@@ -22,6 +22,18 @@ class LoginView {
         $smarty->assign('tours', $tours); // Asignar la lista de tours
         $smarty->display('templates/AdministrarTours.tpl'); // Mostrar el template
     }
+    function mostrar_agregar($cruceros,$tours) {
+        $smarty = new Smarty();
+        $smarty->assign('cruceros', $cruceros);
+        $smarty->assign('tours', $tours); // Asignar la lista de tours
+        $smarty->display('templates/agregarTour.tpl'); // Mostrar el template
+    }
+    function mostrar_editar($cruceros,$tour) {
+        $smarty = new Smarty();
+        $smarty->assign('cruceros', $cruceros);
+        $smarty->assign('tour', $tour); // Asignar la lista de tours
+        $smarty->display('templates/editarTour.tpl'); // Mostrar el template
+    }
     function mostrar_options() {
         $smarty = new Smarty();
         $smarty->assign('cruceros', 'Cruceros'); // Asignar la lista de cruceros

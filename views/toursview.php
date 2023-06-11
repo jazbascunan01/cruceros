@@ -29,7 +29,15 @@ function mostrarToursFiltrados($cruceros, $tours)
     $smarty->assign('tours', $tours);
     $smarty->display('templates/tours.tpl');
 }
-
+public function editar($tour){
+    $smarty = new Smarty();
+    $smarty->assign('tour', $tour);
+    $smarty->display('templates/editarTour.tpl');
+}
+public function showError($msgError) {
+    echo "<h1>ERROR!</h1>";
+    echo "<h2>{$msgError}</h2>";
+}
     
 }
 

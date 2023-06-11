@@ -12,16 +12,19 @@ if (!empty($_REQUEST['action'])) {
 } else {
     $action = 'home'; // acción por defecto si no envían
 }
+$partesURL = explode('/', $_GET['action']);
 
-switch ($action) {
+switch ($partesURL[0]) {
     case 'home':
         $crucerosc->show_home();
         break;
     case 'tours':
+        $toursc = new ToursController;
         $toursc->show();
         break;
     case 'tour':
-        $toursc->showTour();
+        $toursc = new ToursController;
+        $toursc->showTour($partesURL[1]);
         break;
     case 'cruceros':
         $crucerosc->show();
@@ -47,5 +50,25 @@ switch ($action) {
     case 'AdministrarTours':
         $controller = new LoginController();
         $controller->show_tours();
+        break;
+    case 'AgregarTour':
+        $controller = new LoginController();
+        $controller->show_form_agregar_tours();
+        break;
+    case 'ConfirmarAgregar':
+        $controller = new ToursController();
+        $controller->addTours();
+        break;
+    case 'eliminar':
+        $controller = new ToursController();
+        $controller->deleteTour($partesURL[1]);
+        break;
+    case 'editar':
+        $controller = new LoginController();
+        $controller->show_form_editar_tours($partesURL[1]);
+        break;
+    case 'editarTour':
+        $controller = new ToursController();
+        $controller->editTour($partesURL[1]);
         break;
 }

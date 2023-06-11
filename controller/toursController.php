@@ -15,22 +15,24 @@ class ToursController
         $this->cruceroscontroller = new crucerosController();
     }
 
-    public function getAlltours(){
+    public function getAlltours()
+    {
         return $this->model->gettours();
     }
 
-    public function getAllcruceros(){
+    public function getAllcruceros()
+    {
         return $this->cruceroscontroller->getModel()->getcruceros();
     }
 
     public function show()
     {
         $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
-        $tours = $this->getAlltours();//obtener todos los tours del model
+        $tours = $this->getAlltours(); //obtener todos los tours del model
         $this->view->mostrar_tours($cruceros, $tours);
     }
-    public function showTour() {
-        $id = $_GET['id'];
+    public function showTour($id)
+    {
         $tour = $this->model->gettour($id);
         $crucero_id = $tour->id_crucero;
         $crucero = $this->cruceroscontroller->getModel()->getcrucero($crucero_id);
@@ -49,6 +51,45 @@ class ToursController
 
         // Asignar los datos a la vista
         $this->view->mostrarToursFiltrados($cruceros, $tours);
+    }
+    public function addTours()
+    {
+
+        $id_crucero = $_POST['crucero'];
+        $destino = $_POST['destino'];
+        $fecha_salida = $_POST['fecha_salida'];
+        $precio = $_POST['precio'];
+        $descripcion = $_POST['descripcion'];
+        $img1 = $_POST['img1'];
+        $img2 = $_POST['img2'];
+        $detalles = $_POST['detalles'];
+
+        if (!empty($destino)) {
+            $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
+            header("Location: AdministrarTours");
+        } else {
+            $this->view->showError("Faltan datos obligatorios");
+        }
+    }
+
+    public function deleteTour($tour)
+    {
+        $this->model->delete($tour);
+        header("Location: ../AdministrarTours");
+    }
+
+    public function editTour($tour) {
+
+        $id_crucero = $_POST['crucero'];
+        $destino = $_POST['destino'];
+        $fecha_salida = $_POST['fecha_salida'];
+        $precio = $_POST['precio'];
+        $descripcion = $_POST['descripcion'];
+        $img1 = $_POST['img1'];
+        $img2 = $_POST['img2'];
+        $detalles = $_POST['detalles'];
+        $this->model->editar($tour, $id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
+        header("Location: ../AdministrarTours");
     }
 
     public function getModel()

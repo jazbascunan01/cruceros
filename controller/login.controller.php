@@ -4,25 +4,29 @@ include_once('./models/user.model.php');
 include_once('controller/toursController.php');
 require_once('controller/crucerosController.php');
 
-class LoginController {
+class LoginController
+{
 
     private $view;
     private $model;
     private $tourscontroller;
     private $cruceroscontroller;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->view = new LoginView();
         $this->model = new UserModel();
         $this->tourscontroller = new ToursController();
         $this->cruceroscontroller = new crucerosController();
     }
 
-    public function showLogin() {
+    public function showLogin()
+    {
         $this->view->showLogin();
     }
 
-    public function verifyUser() {
+    public function verifyUser()
+    {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
@@ -35,16 +39,18 @@ class LoginController {
             $this->view->showLogin("Login incorrecto");
         }
     }
-    public function getAlltours(){
+    public function getAlltours()
+    {
         return $this->tourscontroller->getModel()->gettours();
     }
-    public function getAllcruceros(){
+    public function getAllcruceros()
+    {
         return $this->cruceroscontroller->getModel()->getcruceros();
     }
     public function show_tours()
     {
         $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
-        $tours = $this->getAlltours();//obtener todos los tours del model
+        $tours = $this->getAlltours(); //obtener todos los tours del model
         $this->view->mostrar_tours($cruceros, $tours);
     }
 
@@ -52,4 +58,16 @@ class LoginController {
     {
         $this->view->mostrar_options();
     }
+    public function show_form_agregar_tours()
+    {
+        $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
+        $tours = $this->getAlltours(); //obtener todos los tours del model
+        $this->view->mostrar_agregar($cruceros, $tours);
+    }
+    public function show_form_editar_tours($tourId) {
+        $cruceros = $this->getAllcruceros();
+        $tour = $this->tourscontroller->getModel()->gettour($tourId);
+        $this->view->mostrar_editar($cruceros, $tour);
+    }
+    
 }
