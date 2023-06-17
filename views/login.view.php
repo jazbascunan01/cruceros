@@ -1,40 +1,48 @@
 <?php
 require_once('libs/Smarty.class.php');
 
-class LoginView {
+class LoginView
+{
 
     private $smarty;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->smarty = new Smarty();
         $this->smarty->assign('basehref', BASE_URL);
     }
 
-    public function showLogin($error = null) {
+    public function showLogin($logged_in)
+    {
         $this->smarty->assign('titulo', 'Iniciar Sesión');
-        $this->smarty->assign('error', $error);
-        $this->smarty->display('templates/login.tpl');
+        $this->smarty->assign('logged_in', $logged_in);
+        $this->smarty->display('templates/header.tpl');
     }
+    
 
-    function mostrar_tours($cruceros, $tours) {
+    function mostrar_tours($cruceros, $tours)
+    {
         $smarty = new Smarty();
         $smarty->assign('cruceros', $cruceros); // Asignar la lista de cruceros
         $smarty->assign('tours', $tours); // Asignar la lista de tours
         $smarty->display('templates/AdministrarTours.tpl'); // Mostrar el template
     }
-    function mostrar_agregar($cruceros,$tours) {
+    function mostrar_agregar($cruceros, $tours)
+    {
         $smarty = new Smarty();
         $smarty->assign('cruceros', $cruceros);
         $smarty->assign('tours', $tours); // Asignar la lista de tours
         $smarty->display('templates/agregarTour.tpl'); // Mostrar el template
     }
-    function mostrar_editar($cruceros,$tour) {
+    function mostrar_editar($cruceros, $tour)
+    {
         $smarty = new Smarty();
         $smarty->assign('cruceros', $cruceros);
         $smarty->assign('tour', $tour); // Asignar la lista de tours
         $smarty->display('templates/editarTour.tpl'); // Mostrar el template
     }
-    function mostrar_options() {
+    function mostrar_options()
+    {
         $smarty = new Smarty();
         $smarty->assign('cruceros', 'Cruceros'); // Asignar la lista de cruceros
         $smarty->assign('tours', 'Tours'); // Asignar la lista de tours
@@ -42,4 +50,5 @@ class LoginView {
         $smarty->assign('imagen_tours', 'images/images.jpg'); // Asignar la lista de tours
         $smarty->display('templates/options.tpl'); // Mostrar el template
     }
+
 }

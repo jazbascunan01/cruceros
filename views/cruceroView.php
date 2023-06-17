@@ -24,4 +24,10 @@ class cruceroView
         $smarty->assign('cruceros', $cruceros);
         $smarty->display('templates/home.tpl'); // muestro el template    
     }
+    public function showLogin($logged_in)
+    {
+        $smarty = new Smarty();
+        $this->$smarty->assign('logged_in', $logged_in);
+        $this->$smarty->display('templates/header.tpl');
+    }
 }

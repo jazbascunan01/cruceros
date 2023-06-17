@@ -10,7 +10,7 @@ $crucerosc = new crucerosController;
 if (!empty($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
 } else {
-    $action = 'home'; // acción por defecto si no envían
+    header('Location: ' . BASE_URL . 'home'); // acción por defecto si no envían
 }
 $partesURL = explode('/', $_GET['action']);
 
@@ -38,6 +38,10 @@ switch ($partesURL[0]) {
     case 'login':
         $controller = new LoginController();
         $controller->showLogin();
+        break;
+    case 'logout':
+        $loginController = new LoginController();
+        $loginController->logout();
         break;
     case 'verify':
         $controller = new LoginController();

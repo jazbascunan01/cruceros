@@ -2,6 +2,12 @@
 require_once('libs/Smarty.class.php');
 
 class toursView {
+    public function showLogin($logged_in)
+    {
+        $smarty = new Smarty();
+        $this->$smarty->assign('logged_in', $logged_in);
+        $this->$smarty->display('templates/header.tpl');
+    }
     function mostrar_tours($cruceros, $tours) {
         $smarty = new Smarty();
         $smarty->assign('cruceros', $cruceros); // Asignar la lista de cruceros
