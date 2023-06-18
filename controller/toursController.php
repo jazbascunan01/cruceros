@@ -98,8 +98,17 @@ class ToursController
         $img1 = $_POST['img1'];
         $img2 = $_POST['img2'];
         $detalles = $_POST['detalles'];
-        $this->model->editar($tour, $id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
-        header("Location: ../AdministrarTours");
+        if (!empty($destino) && !empty($id_crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($img1) && !empty($img2) && !empty($detalles)) {
+            if (is_numeric($precio) && strlen($destino) <= 150 && strlen($descripcion) <= 2000 && strlen($img1) <= 4000 && strlen($img2) <= 4000 && strlen($detalles) <= 4000) {
+                $this->model->editar($tour, $id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
+                header("Location: ../AdministrarTours");
+            }
+            else {
+                $this->view->showError("Datos inválidos");
+            }
+        } else {
+            $this->view->showError("Faltan datos obligatorios");
+        }
     }
 
     public function getModel()
@@ -118,9 +127,13 @@ class ToursController
         AuthHelper::checklogin();
         if (isset($tourId) && !empty($tourId)) {
             $cruceros = $this->getAllcruceros();
-            $tour = $this->model->gettour($tourId);
-            $this->view->mostrar_editar($cruceros, $tour);
-        }else{
+            if ($this->model->gettour($tourId) === null) {
+                $this->view->showError('No se ha podido encontrar el tour');
+            } else {
+                $tour = $this->model->gettour($tourId);
+                $this->view->mostrar_editar($cruceros, $tour);
+            }
+        } else {
             $this->view->showError('No se ha podido encontrar el tour');
         }
     }

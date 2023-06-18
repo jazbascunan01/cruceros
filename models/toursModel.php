@@ -19,7 +19,11 @@ class toursModel
         $query = $db->prepare('SELECT * FROM tours WHERE id = ?');
         $query->execute([$id]);
         $tour = $query->fetch(PDO::FETCH_OBJ);
-        return $tour;
+        if ($query->rowCount() > 0) {
+            return $tour;
+        } else {
+            return null; // ID no encontrado en la base de datos
+        }
     }
 
     function getids($id)
