@@ -64,7 +64,7 @@ class ToursController
         $img2 = $_POST['img2'];
         $detalles = $_POST['detalles'];
 
-        if (!empty($destino)) {
+        if (!empty($destino) && !empty($crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($img1) && !empty($img2) && !empty($detalles)) {
             $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
             header("Location: AdministrarTours");
         } else {
@@ -78,7 +78,8 @@ class ToursController
         header("Location: ../AdministrarTours");
     }
 
-    public function editTour($tour) {
+    public function editTour($tour)
+    {
 
         $id_crucero = $_POST['crucero'];
         $destino = $_POST['destino'];
