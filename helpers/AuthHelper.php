@@ -12,7 +12,27 @@ class AuthHelper {
 
     public static function checkLoggedIn() {
         self::start();
+        AuthHelper::checkTime();
         return isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+    }
+    public static function checklogin(){
+        if (!(self :: checkLoggedIn())){
+            header('Location: ' . BASE_URL . "login");
+            die;
+        }
+    }
+    public static function checkTime(){
+        AuthHelper::start();
+        if(!isset($_SESSION['time'])){
+            $_SESSION['time'] = time();
+        }
+        else {
+            if(time() - $_SESSION['time'] > 300){//5 minutos
+                AuthHelper::logout();
+                header("Location:". BASE_URL . "login");
+                die();
+            }
+        }
     }
 
     public static function setUser($user) {

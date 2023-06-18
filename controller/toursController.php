@@ -54,7 +54,7 @@ class ToursController
     }
     public function addTours()
     {
-
+        AuthHelper::checklogin();
         $id_crucero = $_POST['crucero'];
         $destino = $_POST['destino'];
         $fecha_salida = $_POST['fecha_salida'];
@@ -64,9 +64,13 @@ class ToursController
         $img2 = $_POST['img2'];
         $detalles = $_POST['detalles'];
 
-        if (!empty($destino) && !empty($crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($img1) && !empty($img2) && !empty($detalles)) {
-            $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
-            header("Location: AdministrarTours");
+        if (!empty($destino) && !empty($id_crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($img1) && !empty($img2) && !empty($detalles)) {
+            if (is_numeric($precio) && strlen($destino) <= 150 && strlen($descripcion) <= 2000 && strlen($img1) <= 4000 && strlen($img2) <= 4000 && strlen($detalles) <= 4000) {
+                $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
+                header("Location: AdministrarTours");
+            } else {
+                $this->view->showError("Datos inválidos");
+            }
         } else {
             $this->view->showError("Faltan datos obligatorios");
         }
@@ -74,13 +78,19 @@ class ToursController
 
     public function deleteTour($tour)
     {
-        $this->model->delete($tour);
-        header("Location: ../AdministrarTours");
+        AuthHelper::checklogin();
+        if (isset($tour) && !empty($tour)) {
+            $this->model->delete($tour);
+            header("Location: ../AdministrarTours");
+        }
+        else{
+            $this->view->showError('No se ha podido eliminar el tour');
+        }
     }
 
     public function editTour($tour)
     {
-
+        AuthHelper::checklogin();
         $id_crucero = $_POST['crucero'];
         $destino = $_POST['destino'];
         $fecha_salida = $_POST['fecha_salida'];
@@ -99,18 +109,21 @@ class ToursController
     }
     public function show_form_agregar_tours()
     {
+        AuthHelper::checklogin();
         $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
         $tours = $this->getAlltours(); //obtener todos los tours del model
         $this->view->mostrar_agregar($cruceros, $tours);
     }
     public function show_form_editar_tours($tourId)
     {
+        AuthHelper::checklogin();
         $cruceros = $this->getAllcruceros();
         $tour = $this->model->gettour($tourId);
         $this->view->mostrar_editar($cruceros, $tour);
     }
     public function show_tours()
     {
+        AuthHelper::checklogin();
         $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
         $tours = $this->getAlltours(); //obtener todos los tours del model
         $this->view->mostrar_tours_admin($cruceros, $tours);
