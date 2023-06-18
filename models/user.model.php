@@ -11,11 +11,11 @@ class UserModel {
     /**
      * Retorna un usuario según el username pasado.
      */
-    public function getByUsername($username) {
-        $query = $this->db->prepare('SELECT * FROM usuarios WHERE nombre_usuario = ?');
-        $query->execute(array($username));
-
-        return $query->fetch(PDO::FETCH_OBJ);
+    public function getUserByUserName($username){
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE nombre_usuario = :username');
+        $query->execute(array(':username' => $username));
+        return $query->fetch(PDO::FETCH_ASSOC);
     }
+
 
 }

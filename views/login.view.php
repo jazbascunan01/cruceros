@@ -12,43 +12,28 @@ class LoginView
         $this->smarty->assign('basehref', BASE_URL);
     }
 
-    public function showLogin($logged_in)
+    public function showLogin($username = null)
     {
         $this->smarty->assign('titulo', 'Iniciar Sesión');
-        $this->smarty->assign('logged_in', $logged_in);
-        $this->smarty->display('templates/header.tpl');
+        $this->smarty->assign('username', $username);
+        $this->smarty->display('templates/login.tpl');
     }
     
-
-    function mostrar_tours($cruceros, $tours)
+    public function mostrar_options()
     {
-        $smarty = new Smarty();
-        $smarty->assign('cruceros', $cruceros); // Asignar la lista de cruceros
-        $smarty->assign('tours', $tours); // Asignar la lista de tours
-        $smarty->display('templates/AdministrarTours.tpl'); // Mostrar el template
-    }
-    function mostrar_agregar($cruceros, $tours)
-    {
-        $smarty = new Smarty();
-        $smarty->assign('cruceros', $cruceros);
-        $smarty->assign('tours', $tours); // Asignar la lista de tours
-        $smarty->display('templates/agregarTour.tpl'); // Mostrar el template
-    }
-    function mostrar_editar($cruceros, $tour)
-    {
-        $smarty = new Smarty();
-        $smarty->assign('cruceros', $cruceros);
-        $smarty->assign('tour', $tour); // Asignar la lista de tours
-        $smarty->display('templates/editarTour.tpl'); // Mostrar el template
-    }
-    function mostrar_options()
-    {
-        $smarty = new Smarty();
-        $smarty->assign('cruceros', 'Cruceros'); // Asignar la lista de cruceros
-        $smarty->assign('tours', 'Tours'); // Asignar la lista de tours
-        $smarty->assign('imagen_crucero', 'images/photo-1599640842225-85d111c60e6b.jpg'); // Asignar la lista de tours
-        $smarty->assign('imagen_tours', 'images/images.jpg'); // Asignar la lista de tours
-        $smarty->display('templates/options.tpl'); // Mostrar el template
+        $authHelper = new AuthHelper();
+        $this->smarty->assign('logged_in', $authHelper->checkLoggedIn());
+        $this->smarty->assign('cruceros', 'Cruceros'); // Asignar la lista de cruceros
+        $this->smarty->assign('tours', 'Tours'); // Asignar la lista de tours
+        $this->smarty->assign('imagen_crucero', 'images/photo-1599640842225-85d111c60e6b.jpg'); // Asignar la lista de tours
+        $this->smarty->assign('imagen_tours', 'images/images.jpg'); // Asignar la lista de tours
+        $this->smarty->display('templates/options.tpl');
     }
 
+
+    public function setLoggedStatus($loggedIn)
+    {
+        $this->smarty->assign('logged_in', $loggedIn);
+    }
 }
+

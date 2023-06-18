@@ -96,5 +96,23 @@ class ToursController
     {
         return $this->model;
     }
+    public function show_form_agregar_tours()
+    {
+        $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
+        $tours = $this->getAlltours(); //obtener todos los tours del model
+        $this->view->mostrar_agregar($cruceros, $tours);
+    }
+    public function show_form_editar_tours($tourId)
+    {
+        $cruceros = $this->getAllcruceros();
+        $tour = $this->model->gettour($tourId);
+        $this->view->mostrar_editar($cruceros, $tour);
+    }
+    public function show_tours()
+    {
+        $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
+        $tours = $this->getAlltours(); //obtener todos los tours del model
+        $this->view->mostrar_tours_admin($cruceros, $tours);
+    }
 
 }

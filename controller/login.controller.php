@@ -23,64 +23,46 @@ class LoginController
         $this->authHelper = new AuthHelper();
     }
 
-    public function showLogin()
-    {
-        $this->view->showLogin(array('error' => '')); // Pasa un argumento vacío o el mensaje de error que desees mostrar
-
+    public function serveLogin(){
+        $this->view->showLogin();
     }
-    
-    
 
-    public function verifyUser()
-    {
-        if (isset($_POST['username']) && isset($_POST['password'])) {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $user = $this->model->getByUsername($username);
-        }
-        // encontró un user con el username que mandó, y tiene la misma contraseña
-        if (!empty($user) && password_verify($password, $user->password)) {
-            $this->authHelper->login($user);
-            header('Location: Opciones');
+    public function verify() {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $user = $this->model->getUserByUsername($username);
+
+        if (isset($user) && !empty($user) && isset($username) && !empty($username) && isset($password) && !empty($password) && password_verify($password, $user['password'])) {
+            AuthHelper::start();
+            AuthHelper::setUser($user);
+            $_SESSION['user'] = $user;
+            $_SESSION['logged_in'] = true;
+
+            header("Location: " . BASE_URL . 'Opciones');
+            exit();
         } else {
-            $this->view->showLogin("Login incorrecto"); // Pasa el argumento $error
+            $this->view->showLogin('login incorrecto');
         }
     }
-    
+
     public function logout() {
-        $this->authHelper->logout();
-        header('Location: home');
+        AuthHelper::logout();
+        header("Location: " . BASE_URL . 'home');
+        exit();
     }
+
     public function getAlltours()
     {
         return $this->tourscontroller->getModel()->gettours();
     }
+
     public function getAllcruceros()
     {
         return $this->cruceroscontroller->getModel()->getcruceros();
-    }
-    public function show_tours()
-    {
-        $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
-        $tours = $this->getAlltours(); //obtener todos los tours del model
-        $this->view->mostrar_tours($cruceros, $tours);
     }
 
     public function showOptions()
     {
         $this->view->mostrar_options();
     }
-    public function show_form_agregar_tours()
-    {
-        $cruceros = $this->getAllcruceros(); //Obtener los cruceros con el crucero controller
-        $tours = $this->getAlltours(); //obtener todos los tours del model
-        $this->view->mostrar_agregar($cruceros, $tours);
-    }
-    public function show_form_editar_tours($tourId)
-    {
-        $cruceros = $this->getAllcruceros();
-        $tour = $this->tourscontroller->getModel()->gettour($tourId);
-        $this->view->mostrar_editar($cruceros, $tour);
-    }
-
 }

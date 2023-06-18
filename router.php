@@ -37,7 +37,7 @@ switch ($partesURL[0]) {
         break;
     case 'login':
         $controller = new LoginController();
-        $controller->showLogin();
+        $controller->serveLogin();
         break;
     case 'logout':
         $loginController = new LoginController();
@@ -45,18 +45,18 @@ switch ($partesURL[0]) {
         break;
     case 'verify':
         $controller = new LoginController();
-        $controller->verifyUser();
+        $controller->verify();
         break;
     case 'Opciones':
         $controller = new LoginController();
         $controller->showOptions();
         break;
     case 'AdministrarTours':
-        $controller = new LoginController();
+        $controller = new ToursController();
         $controller->show_tours();
         break;
     case 'AgregarTour':
-        $controller = new LoginController();
+        $controller = new ToursController();
         $controller->show_form_agregar_tours();
         break;
     case 'ConfirmarAgregar':
@@ -68,7 +68,7 @@ switch ($partesURL[0]) {
         $controller->deleteTour($partesURL[1]);
         break;
     case 'editar':
-        $controller = new LoginController();
+        $controller = new ToursController();
         $controller->show_form_editar_tours($partesURL[1]);
         break;
     case 'editarTour':

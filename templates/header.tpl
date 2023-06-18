@@ -52,13 +52,16 @@
             <li class="item" id="contacto"><img class="logo_nav" id="nav_contacto"
                     src="{BASE_URL}images/logo_contacto.png" alt="logo contacto"><a class="route"
                     id="contactos">Contacto</a> </li>
-            <li class="item"><img class="logo_nav" id="nav_administrador" src="{BASE_URL}images/logo_administrador.png"
-                    alt="logo admin">{if $logged_in}
-                    <a href="logout">Cerrar Sesión</a>
-                {else}
-                    <button type="submit">Iniciar Sesión</button>
-                {/if}
-            </li>
+                    <li class="item" id="nav_administrador">
+                    <img class="logo_nav" id="nav_administrador" src="{BASE_URL}images/logo_administrador.png" alt="logo admin">
+                    {if AuthHelper::checkLoggedIn()}
+                        <a href="{BASE_URL}logout">Cerrar Sesión</a>
+                    {else}
+                        <a href="{BASE_URL}login">Iniciar Sesión</a>
+                    {/if}
+                    
+                    
+                </li>
 
         </ul>
 </nav>

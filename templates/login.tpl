@@ -1,7 +1,7 @@
 {include 'templates/header.tpl'}
 <div class="container">
     <form action="verify" method="POST" class="col-md-4 offset-md-4 mt-4">
-        <h1>{$titulo}</h1>
+
 
         <div class="form-group">
             <label>Usuario (email)</label>
