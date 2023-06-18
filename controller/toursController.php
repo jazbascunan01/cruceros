@@ -82,8 +82,7 @@ class ToursController
         if (isset($tour) && !empty($tour)) {
             $this->model->delete($tour);
             header("Location: ../AdministrarTours");
-        }
-        else{
+        } else {
             $this->view->showError('No se ha podido eliminar el tour');
         }
     }
@@ -117,9 +116,13 @@ class ToursController
     public function show_form_editar_tours($tourId)
     {
         AuthHelper::checklogin();
-        $cruceros = $this->getAllcruceros();
-        $tour = $this->model->gettour($tourId);
-        $this->view->mostrar_editar($cruceros, $tour);
+        if (isset($tourId) && !empty($tourId)) {
+            $cruceros = $this->getAllcruceros();
+            $tour = $this->model->gettour($tourId);
+            $this->view->mostrar_editar($cruceros, $tour);
+        }else{
+            $this->view->showError('No se ha podido encontrar el tour');
+        }
     }
     public function show_tours()
     {
