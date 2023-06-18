@@ -1,4 +1,6 @@
 <?php
+ini_set('memory_limit', '1024M'); // Aumenta el límite de memoria a 1 GB
+
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 
@@ -19,11 +21,9 @@ switch ($partesURL[0]) {
         $crucerosc->show_home();
         break;
     case 'tours':
-        $toursc = new ToursController;
         $toursc->show();
         break;
     case 'tour':
-        $toursc = new ToursController;
         $toursc->showTour($partesURL[1]);
         break;
     case 'cruceros':
@@ -52,27 +52,24 @@ switch ($partesURL[0]) {
         $controller->showOptions();
         break;
     case 'AdministrarTours':
-        $controller = new ToursController();
-        $controller->show_tours();
+        $toursc->show_tours();
         break;
     case 'AgregarTour':
-        $controller = new ToursController();
-        $controller->show_form_agregar_tours();
+        $toursc->show_form_agregar_tours();
         break;
     case 'ConfirmarAgregar':
-        $controller = new ToursController();
-        $controller->addTours();
+        $toursc->addTours();
         break;
     case 'eliminar':
-        $controller = new ToursController();
-        $controller->deleteTour($partesURL[1]);
+        $toursc->deleteTour($partesURL[1]);
         break;
     case 'editar':
-        $controller = new ToursController();
-        $controller->show_form_editar_tours($partesURL[1]);
+        $toursc->show_form_editar_tours($partesURL[1]);
         break;
     case 'editarTour':
-        $controller = new ToursController();
-        $controller->editTour($partesURL[1]);
+        $toursc->editTour($partesURL[1]);
+        break;
+    case 'AdministrarCruceros':
+        $crucerosc->show_cruceros();
         break;
 }

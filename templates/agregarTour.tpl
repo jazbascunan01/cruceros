@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <h2>Añadir un tour</h2>
 <article class="recuadros" id="recuadrosadmin">
-    <form action="ConfirmarAgregar" method="POST">
+    <form action="ConfirmarAgregar" method="POST" >
 
         <div class="row">
             <div>

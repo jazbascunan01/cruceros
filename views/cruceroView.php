@@ -30,4 +30,11 @@ class cruceroView
         $this->$smarty->assign('logged_in', $logged_in);
         $this->$smarty->display('templates/header.tpl');
     }
+    function mostrar_cruceros_Admin($cruceros, $tours)
+    {
+        $smarty = new Smarty();
+        $smarty->assign('cruceros', $cruceros); // Asignar la lista de cruceros
+        $smarty->assign('tours', $tours); // Asignar la lista de tours
+        $smarty->display('templates/AdministrarCruceros.tpl'); // Mostrar el template
+    }
 }
