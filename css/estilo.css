@@ -568,6 +568,10 @@ figure.contenedor_fig .siguiente:hover {
     padding: 0%;
 }
 
+    .custom-input {
+        height: 35px;
+        font-size: 14px;
+    }
 input {
     /*Inputs de las páginas ADMINISTRADOR, CONTACTO y TURNOS*/
     width: 100%;
