@@ -1,13 +1,17 @@
 <?php
 class toursModel
 {
+    private $db;
+    public function __construct()
+    {
+        $this->db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
+    }
     /**
      *  Obtiene la lista de tours
      */
     function gettours()
     {
-        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
-        $query = $db->prepare('SELECT * FROM tours');
+        $query = $this->db->prepare('SELECT * FROM tours');
         $query->execute();
         $tours = $query->fetchAll(PDO::FETCH_OBJ);
         return $tours;
@@ -15,8 +19,7 @@ class toursModel
 
     function gettour($id)
     {
-        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
-        $query = $db->prepare('SELECT * FROM tours WHERE id = ?');
+        $query = $this->db->prepare('SELECT * FROM tours WHERE id = ?');
         $query->execute([$id]);
         $tour = $query->fetch(PDO::FETCH_OBJ);
         if ($query->rowCount() > 0) {
@@ -28,8 +31,7 @@ class toursModel
 
     function getids($id)
     {
-        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
-        $query = $db->prepare('SELECT id FROM tours WHERE id_crucero = ?');
+        $query = $this->db->prepare('SELECT id FROM tours WHERE id_crucero = ?');
         $query->execute([$id]);
         $ids = $query->fetchAll(PDO::FETCH_COLUMN); // Obtener un arreglo de IDs
         return $ids;
@@ -37,8 +39,7 @@ class toursModel
 
     public function getToursByCrucero($cruceroId)
     {
-        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
-        $query = $db->prepare('SELECT * FROM tours WHERE id_crucero = ?');
+        $query = $this->db->prepare('SELECT * FROM tours WHERE id_crucero = ?');
         $query->execute([$cruceroId]);
         $tours = $query->fetchAll(PDO::FETCH_OBJ);
         return $tours;
@@ -49,26 +50,22 @@ class toursModel
      */
     public function save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles)
     {
-        
-        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
-        $query = $db->prepare('INSERT INTO tours(id_crucero, destino, fecha_salida, precio, descripcion, img1, img2, detalles) VALUES(?,?,?,?,?,?,?,?)');
+        $query = $this->db->prepare('INSERT INTO tours(id_crucero, destino, fecha_salida, precio, descripcion, img1, img2, detalles) VALUES(?,?,?,?,?,?,?,?)');
         $query->execute([$id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles]);
 
     }
 
-    function delete($tour) {
-        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
-        $query = $db->prepare('DELETE FROM tours WHERE ID = ?');
-        $query->execute([$tour]); 
+    function delete($tour)
+    {
+        $query = $this->db->prepare('DELETE FROM tours WHERE ID = ?');
+        $query->execute([$tour]);
     }
 
-        /**
-     * Edita el tour
-     */
-    function editar($tour, $id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles) {
-        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
-        $query = $db->prepare('UPDATE tours SET id_crucero=?, destino=?, fecha_salida=?, precio=?, descripcion=?, img1=?, img2=?, detalles=? WHERE ID = ?');
+    /*** Edita el tour*/
+    function editar($tour, $id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles)
+    {
+        $query = $this->db->prepare('UPDATE tours SET id_crucero=?, destino=?, fecha_salida=?, precio=?, descripcion=?, img1=?, img2=?, detalles=? WHERE ID = ?');
         $query->execute([$id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles, $tour]);
-
     }
+
 }
