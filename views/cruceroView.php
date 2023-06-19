@@ -37,4 +37,16 @@ class cruceroView
         $smarty->assign('tours', $tours); // Asignar la lista de tours
         $smarty->display('templates/AdministrarCruceros.tpl'); // Mostrar el template
     }
+    function mostrar_agregar($cruceros, $tours)
+    {
+        $smarty = new Smarty();
+        $smarty->assign('cruceros', $cruceros);
+        $smarty->assign('tours', $tours); // Asignar la lista de tours
+        $smarty->display('templates/agregarCrucero.tpl'); // Mostrar el template
+    }
+    public function showError($msgError)
+    {
+        echo "<h1>ERROR!</h1>";
+        echo "<h2>{$msgError}</h2>";
+    }
 }

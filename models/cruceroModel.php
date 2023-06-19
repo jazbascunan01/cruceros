@@ -20,4 +20,11 @@ class cruceroModel
         $crucero = $query->fetch(PDO::FETCH_OBJ); // Cambio fetchAll() a fetch()
         return $crucero;
     }
+    public function save($nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles)
+    {
+        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
+        $query = $db->prepare('INSERT INTO cruceros(nombre, compania, capacidad, origen, img1, img2, descripcion, detalles) VALUES(?,?,?,?,?,?,?,?)');
+        $query->execute([$nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles]);
+    }
+    
 }
