@@ -26,5 +26,13 @@ class cruceroModel
         $query = $db->prepare('INSERT INTO cruceros(nombre, compania, capacidad, origen, img1, img2, descripcion, detalles) VALUES(?,?,?,?,?,?,?,?)');
         $query->execute([$nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles]);
     }
-    
+    public function cruceroNoExiste($nombre)
+    {
+        $db = new PDO('mysql:host=localhost;dbname=turismo_maritimo;charset=utf8', 'root', '');
+        $query = $db->prepare('SELECT COUNT(*) FROM cruceros WHERE nombre = ?');
+        $query->execute([$nombre]);
+        $count = $query->fetchColumn();
+        return $count == 0;
+    }
+
 }

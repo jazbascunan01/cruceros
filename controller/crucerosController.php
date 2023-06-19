@@ -84,8 +84,12 @@ class crucerosController
 
         if (!empty($nombre) && !empty($compania) && !empty($capacidad) && !empty($origen) && !empty($descripcion) && !empty($img1) && !empty($img2) && !empty($detalles)) {
             if (strlen($nombre) <= 150&&strlen($compania) <= 150&&strlen($origen) <= 150 && strlen($descripcion) <= 2000 && strlen($img1) <= 4000 && strlen($img2) <= 4000 && strlen($detalles) <= 4000) {
-                $this->model->save($nombre, $compania, $capacidad, $origen,  $img1, $img2,$descripcion, $detalles);
-                header("Location: AdministrarCruceros");
+                if ($this->model->cruceroNoExiste($nombre)) {
+                    $this->model->save($nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles);
+                    header("Location: AdministrarCruceros");
+                } else {
+                    $this->view->showError("El crucero ya existe");
+                }
             } else {
                 $this->view->showError("Datos inválidos");
             }
