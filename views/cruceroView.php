@@ -49,4 +49,10 @@ class cruceroView
         echo "<h1>ERROR!</h1>";
         echo "<h2>{$msgError}</h2>";
     }
+    function mostrar_editar($crucero)
+    {
+        $smarty = new Smarty();
+        $smarty->assign('crucero', $crucero);
+        $smarty->display('templates/editarCrucero.tpl'); // Mostrar el template
+    }
 }

@@ -97,4 +97,41 @@ class crucerosController
             $this->view->showError("Faltan datos obligatorios");
         }
     }
+    public function show_form_editar_cruceros($cruceroId)
+    {
+        AuthHelper::checklogin();
+        if (isset($cruceroId) && !empty($cruceroId)) {
+            if ($this->model->getcrucero($cruceroId) === null) {
+                $this->view->showError('No se ha podido encontrar el crucero');
+            } else {
+                $crucero = $this->model->getcrucero($cruceroId);
+                $this->view->mostrar_editar($crucero);
+            }
+        } else {
+            $this->view->showError('No se ha podido encontrar el crucero');
+        }
+    }
+    public function editCrucero($crucero)
+    {
+        AuthHelper::checklogin();
+        $nombre = $_POST['nombre'];
+        $compania = $_POST['compania'];
+        $capacidad = $_POST['capacidad'];
+        $origen = $_POST['origen'];
+        $img1 = $_POST['img1'];
+        $img2 = $_POST['img2'];
+        $descripcion = $_POST['descripcion'];
+        $detalles = $_POST['detalles'];
+        if (!empty($nombre) && !empty($compania) && !empty($capacidad) && !empty($origen) && !empty($descripcion) && !empty($img1) && !empty($img2) && !empty($detalles)) {
+            if (strlen($nombre) <= 150&&strlen($compania) <= 150&&strlen($origen) <= 150 && strlen($descripcion) <= 2000 && strlen($img1) <= 4000 && strlen($img2) <= 4000 && strlen($detalles) <= 4000) {
+                $this->model->editar($crucero, $nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles);
+                header("Location: ../AdministrarCruceros");
+            }
+            else {
+                $this->view->showError("Datos inválidos");
+            }
+        } else {
+            $this->view->showError("Faltan datos obligatorios");
+        }
+    }
 }

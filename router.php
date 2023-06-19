@@ -78,4 +78,10 @@ switch ($partesURL[0]) {
     case 'ConfirmarAgregarCrucero':
         $crucerosc->addCrucero();
         break;
+    case 'editarCrucero':
+        $crucerosc->show_form_editar_cruceros($partesURL[1]);
+        break;
+    case 'editarCruceros':
+        $crucerosc->editCrucero($partesURL[1]);
+        break;
 }
