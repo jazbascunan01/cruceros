@@ -41,10 +41,13 @@ class cruceroModel
         $query->execute([$nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles, $crucero]);
 
     }
-    function delete($crucero)
-    {
-        $query = $this->db->prepare('DELETE FROM cruceros WHERE ID = ?');
-        $query->execute([$crucero]);
+    public function deleteCrucero($id){
+        $query = $this->db->prepare("DELETE FROM `cruceros` WHERE ID = ?");
+        $query2 = $this->db->prepare("DELETE FROM `tours` WHERE id_crucero = ?");
+        $query2->execute([$id]);
+        $query->execute([$id]);
+
     }
+    
 
 }

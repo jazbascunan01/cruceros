@@ -54,4 +54,9 @@ class cruceroView
         $this->smarty->assign('crucero', $crucero);
         $this->smarty->display('templates/editarCrucero.tpl'); // Mostrar el template
     }
+    public function showDeleteCruceroConfirmation($id){
+        $this->smarty->assign('id', $id);
+        $this->smarty->assign('page', 'Eliminar Crucero');
+        $this->smarty->display('deleteCrucero.tpl');
+    }
 }

@@ -87,4 +87,7 @@ switch ($partesURL[0]) {
     case 'eliminarCrucero':
         $crucerosc->deleteCrucero($partesURL[1]);
         break;
+    case 'deleteCruceroConfirm':
+        $crucerosc->deleteC($partesURL[1]);
+        break;
 }

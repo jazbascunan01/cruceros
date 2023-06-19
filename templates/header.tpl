@@ -11,6 +11,7 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script/main.js"></script>
+    <script src="../script/confirmarEliminacion.js"></script>
     <link rel="stylesheet" href="{BASE_URL}css/estilo.css"><!-- Estilo de css -->
     <title>J&J Travel Agency</title>
 </head>
