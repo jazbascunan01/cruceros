@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logotipo-viaje-detallado_23-2148616611.png">
+    <link rel="icon" href="images/vecteezy_cruise-ship-sticker-design-with-sea-and-sunset-view_23401374_468.png">
     <!--logo en la pestaña del navegador-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -13,7 +13,7 @@
     <script src="script/main.js"></script>
     <script src="../script/confirmarEliminacion.js"></script>
     <link rel="stylesheet" href="{BASE_URL}css/estilo.css"><!-- Estilo de css -->
-    <title>J&J Travel Agency</title>
+    <title>Ocean Dream</title>
 </head>
 
 <body>
