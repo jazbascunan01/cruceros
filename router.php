@@ -63,6 +63,9 @@ switch ($partesURL[0]) {
     case 'eliminar':
         $toursc->deleteTour($partesURL[1]);
         break;
+    case 'deleteTourConfirm':
+        $toursc->deleteT($partesURL[1]);
+        break;
     case 'editar':
         $toursc->show_form_editar_tours($partesURL[1]);
         break;

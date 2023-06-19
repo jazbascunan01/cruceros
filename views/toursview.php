@@ -68,5 +68,10 @@ class toursView
         $this->smarty->assign('tour', $tour); // Asignar la lista de tours
         $this->smarty->display('templates/editarTour.tpl'); // Mostrar el template
     }
+    public function showDeleteToursConfirmation($id){
+        $this->smarty->assign('id', $id);
+        $this->smarty->assign('page', 'Eliminar Tour');
+        $this->smarty->display('deleteTour.tpl');
+    }
 
 }
