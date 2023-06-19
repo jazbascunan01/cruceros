@@ -84,4 +84,7 @@ switch ($partesURL[0]) {
     case 'editarCruceros':
         $crucerosc->editCrucero($partesURL[1]);
         break;
+    case 'eliminarCrucero':
+        $crucerosc->deleteCrucero($partesURL[1]);
+        break;
 }

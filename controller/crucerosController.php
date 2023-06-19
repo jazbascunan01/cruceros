@@ -134,4 +134,14 @@ class crucerosController
             $this->view->showError("Faltan datos obligatorios");
         }
     }
+    public function deleteCrucero($crucero)
+    {
+        AuthHelper::checklogin();
+        if (isset($crucero) && !empty($crucero)) {
+            $this->model->delete($crucero);
+            header("Location: ../AdministrarCruceros");
+        } else {
+            $this->view->showError('No se ha podido eliminar el tour');
+        }
+    }
 }

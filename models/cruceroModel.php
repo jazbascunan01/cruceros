@@ -40,5 +40,10 @@ class cruceroModel
         $query->execute([$nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles, $crucero]);
 
     }
+    function delete($crucero) {
+        $db = new PDO('mysql:host=localhost;' . 'dbname=turismo_maritimo;charset=utf8', 'root', '');
+        $query = $db->prepare('DELETE FROM cruceros WHERE ID = ?');
+        $query->execute([$crucero]); 
+    }
 
 }
