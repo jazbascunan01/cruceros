@@ -46,23 +46,26 @@ class cruceroView
     }
     public function showError($msgError)
     {
-        echo "<h1>ERROR!</h1>";
-        echo "<h2>{$msgError}</h2>";
+        $this->smarty->assign('msg', $msgError);
+        $this->smarty->display('error.tpl');
     }
     function mostrar_editar($crucero)
     {
         $this->smarty->assign('crucero', $crucero);
         $this->smarty->display('templates/editarCrucero.tpl'); // Mostrar el template
     }
-    public function showDeleteCruceroConfirmation($id){
+    public function showDeleteCruceroConfirmation($id)
+    {
         $this->smarty->assign('id', $id);
         $this->smarty->assign('page', 'Eliminar Crucero');
         $this->smarty->display('deleteCrucero.tpl');
     }
-    public function showNosotros(){
+    public function showNosotros()
+    {
         $this->smarty->display('Nosotros.tpl');
     }
-    public function showContactos(){
+    public function showContactos()
+    {
         $this->smarty->display('Contactos.tpl');
     }
 

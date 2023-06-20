@@ -47,8 +47,8 @@ class toursView
     }
     public function showError($msgError)
     {
-        echo "<h1>ERROR!</h1>";
-        echo "<h2>{$msgError}</h2>";
+        $this->smarty->assign('msg', $msgError);
+        $this->smarty->display('error.tpl');
     }
     function mostrar_tours_Admin($cruceros, $tours)
     {
