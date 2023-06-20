@@ -7,13 +7,13 @@
             <div>
                 <div class="form-group">
                     <label>Destino</label>
-                    <input name="destino" type="text" class="form-control">
+                    <input name="destino" type="text" class="form-control" required>
                 </div>
             </div>
             <div>
                 <div class="form-group">
                     <label>Crucero:</label>
-                    <select name="crucero" class="form-control">
+                    <select name="crucero" class="form-control" required>
                         {foreach from=$cruceros item=crucero}
                             <option value="{$crucero->ID}">{$crucero->nombre}</option>
                         {/foreach}
@@ -22,21 +22,21 @@
 
                 <div class="form-group">
                     <label>Fecha de salida</label>
-                    <input name="fecha_salida" type="date" class="form-control">
+                    <input name="fecha_salida" type="date" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Precio</label>
-                    <input name="precio" type="number" class="form-control">
+                    <input name="precio" type="number" class="form-control"required>
                 </div>
             </div>
             <div>
                 <div class="form-group">
                     <label>Descripción</label>
-                    <textarea name="descripcion" class="form-control"></textarea>
+                    <textarea name="descripcion" class="form-control" required></textarea>
                 </div>
                 <div class="form-group">
                     <label>Detalles</label>
-                    <textarea name="detalles" class="form-control"></textarea>
+                    <textarea name="detalles" class="form-control" required></textarea>
                 </div>
                 <div class="form-group">
                     <label>Imagen 1</label>
