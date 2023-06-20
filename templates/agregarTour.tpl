@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <h2>Añadir un tour</h2>
 <article class="recuadros" id="recuadrosadmin">
-    <form action="ConfirmarAgregar" method="POST" >
+    <form action="ConfirmarAgregar" method="POST" enctype="multipart/form-data">
 
         <div class="row">
             <div>
@@ -12,7 +12,7 @@
             </div>
             <div>
                 <div class="form-group">
-                    <label>Crucero: </label>
+                    <label>Crucero:</label>
                     <select name="crucero" class="form-control">
                         {foreach from=$cruceros item=crucero}
                             <option value="{$crucero->ID}">{$crucero->nombre}</option>
@@ -26,32 +26,30 @@
                 </div>
                 <div class="form-group">
                     <label>Precio</label>
-                    <input name="precio" type="float" class="form-control">
+                    <input name="precio" type="number" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label>Descripcion</label>
-                    <textarea name="descripcion" class="form-control" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Imagen</label>
-                    <input name="img1" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Imagen</label>
-                    <input name="img2" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                <label>Detalles</label>
-                <textarea name="detalles" class="form-control" rows="3"></textarea>
             </div>
+            <div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea name="descripcion" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Detalles</label>
+                    <textarea name="detalles" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                <label>Imagen 1</label>
+                <input type="file" name="imagen" accept="image/*" required>
+            </div>
+        
+            <div class="form-group">
+                <label>Imagen 2</label>
+                <input type="file" name="imagen2" accept="image/*" required>
+            </div>
+                <input type="submit" class="btn btn-success" value="Guardar">
             </div>
         </div>
-
-
-
-        <button type="submit" class="btn btn-primary">Guardar</button>
-
     </form>
-
 </article>
 {include file="footer.tpl"}
