@@ -62,5 +62,8 @@ class cruceroView
     public function showNosotros(){
         $this->smarty->display('Nosotros.tpl');
     }
+    public function showContactos(){
+        $this->smarty->display('Contactos.tpl');
+    }
 
 }

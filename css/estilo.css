@@ -283,6 +283,16 @@ ul.navigation li a {
     color: #000000;
     margin-bottom: 10%;
 }
+.primer_imagen_de_fondo#contactos h2{
+    color: #000000;
+    align-items: center;
+    margin-bottom: 0%;
+}
+.primer_imagen_de_fondo#contactos{
+    color: #000000;
+    align-items: center;
+    justify-content: center;
+}
 
 .primer_imagen_de_fondo#nosotros {
     /*Página NOSOTROS*/

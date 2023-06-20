@@ -153,5 +153,8 @@ class crucerosController
     public function showNosotros(){
         $this->view->showNosotros();
     }
+    public function showContactos(){
+        $this->view->showContactos();
+    }
 
 }
