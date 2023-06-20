@@ -60,19 +60,14 @@ class ToursController
         $fecha_salida = $_POST['fecha_salida'];
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
-        $rutaTempImagen = $_FILES['imagen']['tmp_name'];
-        $rutaTempImagen2 = $_FILES['imagen2']['tmp_name'];
+        $img1 = $_POST['img1'];
+        $img2 = $_POST['img2'];
         $detalles = $_POST['detalles'];
 
-        if (!empty($destino) && !empty($id_crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($detalles)) {
-            if (is_numeric($precio) && strlen($destino) <= 150 && strlen($descripcion) <= 2000 && strlen($detalles) <= 4000) {
-                if (($_FILES['imagen']['type'] == 'image/jpeg')&&($_FILES['imagen2']['type'] == 'image/jpeg')) {
-                    $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $rutaTempImagen,$rutaTempImagen2, $detalles);
-                    header("Location: AdministrarTours");
-                } else {
-                    $this->view->showError("imagen invalida");
-                }
-
+        if (!empty($destino) && !empty($id_crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($img1) && !empty($img2) && !empty($detalles)) {
+            if (is_numeric($precio) && strlen($destino) <= 150 && strlen($descripcion) <= 2000 && strlen($img1) <= 4000 && strlen($img2) <= 4000 && strlen($detalles) <= 4000) {
+                $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
+                header("Location: AdministrarTours");
             } else {
                 $this->view->showError("Datos inválidos");
             }
@@ -86,13 +81,13 @@ class ToursController
         AuthHelper::checklogin();
         $this->view->showDeleteToursConfirmation($tour);
     }
-    public function deleteT($id)
-    {
+    public function deleteT($id){
         AuthHelper::checklogin();
-        if (isset($id) && !empty($id)) {
+        if(isset($id)&&!empty($id)){
             $this->model->delete($id);
-            header("Location: " . BASE_URL . 'AdministrarTours');
-        } else {
+            header("Location: " . BASE_URL . 'AdministrarTours'); 
+        }
+        else{
             $this->view->showError('No se ha podido eliminar el tour');
         }
     }
@@ -112,7 +107,8 @@ class ToursController
             if (is_numeric($precio) && strlen($destino) <= 150 && strlen($descripcion) <= 2000 && strlen($img1) <= 4000 && strlen($img2) <= 4000 && strlen($detalles) <= 4000) {
                 $this->model->editar($tour, $id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles);
                 header("Location: ../AdministrarTours");
-            } else {
+            }
+            else {
                 $this->view->showError("Datos inválidos");
             }
         } else {

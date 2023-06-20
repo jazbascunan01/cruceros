@@ -60,6 +60,11 @@
 
             {if AuthHelper::checkloginlogout()}
                 <li class="item" id="nav_administrador">
+                <img class="logo_nav" id="nav_administrador" src="{BASE_URL}images/log_admin.png"
+                    alt="logo admin">
+                <a href="{BASE_URL}Opciones">Administrador</a>
+            </li>
+                <li class="item" id="nav_administrador">
                     <img class="logo_nav" id="nav_administrador" src="{BASE_URL}images/logo_administrador.png"
                         alt="logo admin">
                     <a href="{BASE_URL}logout">Cerrar Sesión</a>
