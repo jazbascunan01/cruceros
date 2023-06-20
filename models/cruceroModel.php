@@ -25,8 +25,12 @@ class cruceroModel
     }
     public function save($nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles)
     {
+        $destino_final = 'images/' . uniqid() . '.jpg';
+        $destino_final2 = 'images/' . uniqid() . '.jpg';
+        move_uploaded_file($img1, $destino_final);
+        move_uploaded_file($img2, $destino_final2);
         $query = $this->db->prepare('INSERT INTO cruceros(nombre, compania, capacidad, origen, img1, img2, descripcion, detalles) VALUES(?,?,?,?,?,?,?,?)');
-        $query->execute([$nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles]);
+        $query->execute([$nombre, $compania, $capacidad, $origen, $destino_final, $destino_final2, $descripcion, $detalles]);
     }
     public function cruceroNoExiste($nombre)
     {

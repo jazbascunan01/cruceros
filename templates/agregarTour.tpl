@@ -39,14 +39,14 @@
                     <textarea name="detalles" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
-                <label>Imagen 1</label>
-                <input type="file" name="imagen" accept="image/*" required>
-            </div>
-        
-            <div class="form-group">
-                <label>Imagen 2</label>
-                <input type="file" name="imagen2" accept="image/*" required>
-            </div>
+                    <label>Imagen 1</label>
+                    <input type="file" name="imagen" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Imagen 2</label>
+                    <input type="file" name="imagen2" accept="image/*" required>
+                </div>
                 <input type="submit" class="btn btn-success" value="Guardar">
             </div>
         </div>

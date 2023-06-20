@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <h2>Añadir un crucero</h2>
 <article class="recuadros" id="recuadrosadmin">
-    <form action="ConfirmarAgregarCrucero" method="POST">
+    <form action="ConfirmarAgregarCrucero" method="POST" enctype="multipart/form-data">
 
         <div class="row">
             <div>
@@ -25,12 +25,13 @@
                     <input name="origen" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Imagen</label>
-                    <input name="img1" type="text" class="form-control">
+                    <label>Imagen 1</label>
+                    <input type="file" name="imagen" accept="image/*" required>
                 </div>
+
                 <div class="form-group">
-                    <label>Imagen</label>
-                    <input name="img2" type="text" class="form-control">
+                    <label>Imagen 2</label>
+                    <input type="file" name="imagen2" accept="image/*" required>
                 </div>
                 <div class="form-group">
                     <label>Descripcion</label>

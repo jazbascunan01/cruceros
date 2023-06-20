@@ -64,8 +64,7 @@ class toursModel
         $query = $this->db->prepare('DELETE FROM tours WHERE ID = ?');
         $query->execute([$tour]);
     }
-
-    /*** Edita el tour*/
+    /*** Edita el tour***/
     function editar($tour, $id_crucero, $destino, $fecha_salida, $precio, $descripcion, $img1, $img2, $detalles)
     {
         $query = $this->db->prepare('UPDATE tours SET id_crucero=?, destino=?, fecha_salida=?, precio=?, descripcion=?, img1=?, img2=?, detalles=? WHERE ID = ?');

@@ -79,16 +79,20 @@ class crucerosController
         $compania = $_POST['compania'];
         $capacidad = $_POST['capacidad'];
         $origen = $_POST['origen'];
-        $img1 = $_POST['img1'];
-        $img2 = $_POST['img2'];
+        $rutaTempImagen = $_FILES['imagen']['tmp_name'];
+        $rutaTempImagen2 = $_FILES['imagen2']['tmp_name'];
         $descripcion = $_POST['descripcion'];
         $detalles = $_POST['detalles'];
 
-        if (!empty($nombre) && !empty($compania) && !empty($capacidad) && !empty($origen) && !empty($descripcion) && !empty($img1) && !empty($img2) && !empty($detalles)) {
-            if (strlen($nombre) <= 150 && strlen($compania) <= 150 && strlen($origen) <= 150 && strlen($descripcion) <= 2000 && strlen($img1) <= 4000 && strlen($img2) <= 4000 && strlen($detalles) <= 4000) {
+        if (!empty($nombre) && !empty($compania) && !empty($capacidad) && !empty($origen) && !empty($descripcion) && !empty($detalles)) {
+            if (strlen($nombre) <= 150 && strlen($compania) <= 150 && strlen($origen) <= 150 && strlen($descripcion) <= 2000  && strlen($detalles) <= 4000) {
                 if ($this->model->cruceroNoExiste($nombre)) {
-                    $this->model->save($nombre, $compania, $capacidad, $origen, $img1, $img2, $descripcion, $detalles);
-                    header("Location: AdministrarCruceros");
+                    if (($_FILES['imagen']['type'] == 'image/jpeg') && ($_FILES['imagen2']['type'] == 'image/jpeg')) {
+                        $this->model->save($nombre, $compania, $capacidad, $origen, $rutaTempImagen, $rutaTempImagen2, $descripcion, $detalles);
+                        header("Location: AdministrarCruceros");
+                    } else {
+                        $this->view->showError("imagen invalida");
+                    }
                 } else {
                     $this->view->showError("El crucero ya existe");
                 }
@@ -140,20 +144,22 @@ class crucerosController
         AuthHelper::checklogin();
         $this->view->showDeleteCruceroConfirmation($crucero);
     }
-    public function deleteC($id){
+    public function deleteC($id)
+    {
         AuthHelper::checklogin();
-        if(isset($id)&&!empty($id)){
+        if (isset($id) && !empty($id)) {
             $this->model->deleteCrucero($id);
-            header("Location: " . BASE_URL . 'AdministrarCruceros'); 
-        }
-        else{
+            header("Location: " . BASE_URL . 'AdministrarCruceros');
+        } else {
             $this->view->showError('No se ha podido eliminar el Crucero');
         }
     }
-    public function showNosotros(){
+    public function showNosotros()
+    {
         $this->view->showNosotros();
     }
-    public function showContactos(){
+    public function showContactos()
+    {
         $this->view->showContactos();
     }
 
