@@ -269,17 +269,19 @@ ul.navigation li a {
 
 .primer_imagen_de_fondo {
     /*Pagina HOME*/
-    background-image: url(../images/9c2f1a4ade5cb6bc3deb4e4ad6666577.jpg);
+    background-image: url(../images/389784-svetik_3840x2400.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: flex;
     justify-content: center;
-    /*Alinear horizontalmente*/
-    align-items: center;
-    /*Alinear verticalmente*/
+    align-items: end;
     width: 100%;
     height: 230px;
     margin: 0;
+}
+.primer_imagen_de_fondo h2{
+    color: #000000;
+    margin-bottom: 10%;
 }
 
 .primer_imagen_de_fondo#nosotros {

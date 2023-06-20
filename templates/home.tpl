@@ -47,10 +47,9 @@
         <article class="servicios">
 
             <h3 class="titulo_largo">
-                Conocé nuestra increíble oferta de vuelos, hoteles, paquetes turísticos, alquiler de autos, actividades,
-                cruceros,
-                trenes y seguros para tu viaje. Contamos con excelentes promociones a los mejores destinos para tus
-                vacaciones.
+                ¡Descubre nuestra increíble oferta de cruceros! En Ocean Dream, te ofrecemos una amplia selección de
+                emocionantes travesías marítimas. Sumérgete en una experiencia única mientras exploras destinos
+                fascinantes a bordo de nuestros lujosos cruceros.
             </h3>
             <article class="recuadros">
                 {foreach from=$cruceros item=$crucero}
