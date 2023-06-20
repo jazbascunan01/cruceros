@@ -49,8 +49,13 @@ class ToursController
         // Obtener todos los cruceros para cargar el select
         $cruceros = $this->cruceroscontroller->getModel()->getCruceros();
 
+        if (empty($tours)) {
+            $this->view->showError("No hay tours disponibles para el crucero seleccionado.");
+        } else {
+            $this->view->mostrarToursFiltrados($cruceros, $tours);
+        }
         // Asignar los datos a la vista
-        $this->view->mostrarToursFiltrados($cruceros, $tours);
+        
     }
     public function addTours()
     {
