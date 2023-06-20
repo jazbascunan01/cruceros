@@ -138,11 +138,10 @@ class crucerosController
     public function deleteCrucero($crucero)
     {
         AuthHelper::checklogin();
-        AuthHelper::checkLoggedIn();
         $this->view->showDeleteCruceroConfirmation($crucero);
     }
     public function deleteC($id){
-        AuthHelper::checkLoggedIn();
+        AuthHelper::checklogin();
         if(isset($id)&&!empty($id)){
             $this->model->deleteCrucero($id);
             header("Location: " . BASE_URL . 'AdministrarCruceros'); 
@@ -150,12 +149,6 @@ class crucerosController
         else{
             $this->view->showError('No se ha podido eliminar el Crucero');
         }
-    }
-    // archivo.php
-    function confirmarEliminacion()
-    {
-        $output = shell_exec('node confirmarEliminacion.js');
-        return $output;
     }
 
 

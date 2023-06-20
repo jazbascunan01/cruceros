@@ -79,11 +79,10 @@ class ToursController
     public function deleteTour($tour)
     {
         AuthHelper::checklogin();
-        AuthHelper::checkLoggedIn();
         $this->view->showDeleteToursConfirmation($tour);
     }
     public function deleteT($id){
-        AuthHelper::checkLoggedIn();
+        AuthHelper::checklogin();
         if(isset($id)&&!empty($id)){
             $this->model->delete($id);
             header("Location: " . BASE_URL . 'AdministrarTours'); 

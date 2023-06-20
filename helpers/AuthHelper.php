@@ -21,6 +21,9 @@ class AuthHelper {
             die;
         }
     }
+    public static function checkloginlogout(){
+        return isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+    }
     public static function checkTime(){
         AuthHelper::start();
         if(!isset($_SESSION['time'])){
