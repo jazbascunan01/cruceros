@@ -49,7 +49,7 @@
                     alt="logo tipos"><a href="{BASE_URL}cruceros" class="route" id="tipos_de_viajes">cruceros</a></li>
             <li class="item" id="nosotros"><img class="logo_nav" id="nav_nosotros"
                     src="{BASE_URL}images/logo_de_nosotross.png" alt="logo nosotros"><a class="route"
-                    id="nosotross">Nosotros</a> </li>
+                    id="nosotross" href="Nosotros">Nosotros</a> </li>
             <li class="item" id="contacto"><img class="logo_nav" id="nav_contacto"
                     src="{BASE_URL}images/logo_contacto.png" alt="logo contacto"><a class="route"
                     id="contactos">Contacto</a> </li>

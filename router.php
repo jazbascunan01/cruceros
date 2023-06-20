@@ -32,6 +32,9 @@ switch ($partesURL[0]) {
     case 'crucero':
         $crucerosc->showCrucero();
         break;
+    case 'Nosotros':
+        $crucerosc->showNosotros();
+        break;
     case 'filtrar':
         $toursc->filtrar();
         break;

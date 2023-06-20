@@ -59,4 +59,8 @@ class cruceroView
         $this->smarty->assign('page', 'Eliminar Crucero');
         $this->smarty->display('deleteCrucero.tpl');
     }
+    public function showNosotros(){
+        $this->smarty->display('Nosotros.tpl');
+    }
+
 }

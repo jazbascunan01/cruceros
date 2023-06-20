@@ -150,6 +150,8 @@ class crucerosController
             $this->view->showError('No se ha podido eliminar el Crucero');
         }
     }
-
+    public function showNosotros(){
+        $this->view->showNosotros();
+    }
 
 }
