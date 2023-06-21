@@ -40,9 +40,7 @@ class ToursController
     }
     public function filtrar()
     {
-        // Obtener el crucero seleccionado del formulario
-        $cruceroSeleccionado = $_GET['crucero'];
-
+        $cruceroSeleccionado=$_POST['filtro'];
         // Obtener los tours correspondientes al crucero seleccionado
         $tours = $this->model->getToursByCrucero($cruceroSeleccionado);
 
@@ -55,7 +53,7 @@ class ToursController
             $this->view->mostrarToursFiltrados($cruceros, $tours);
         }
         // Asignar los datos a la vista
-        
+
     }
     public function addTours()
     {
@@ -71,8 +69,8 @@ class ToursController
 
         if (!empty($destino) && !empty($id_crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($detalles)) {
             if (is_numeric($precio) && strlen($destino) <= 150 && strlen($descripcion) <= 2000 && strlen($detalles) <= 4000) {
-                if (($_FILES['imagen']['type'] == 'image/jpeg')&&($_FILES['imagen2']['type'] == 'image/jpeg')) {
-                    $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $rutaTempImagen,$rutaTempImagen2, $detalles);
+                if (($_FILES['imagen']['type'] == 'image/jpeg') && ($_FILES['imagen2']['type'] == 'image/jpeg')) {
+                    $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $rutaTempImagen, $rutaTempImagen2, $detalles);
                     header("Location: AdministrarTours");
                 } else {
                     $this->view->showError("imagen invalida");
