@@ -22,7 +22,7 @@ class ToursController
 
     public function getAllcruceros()
     {
-        return $this->cruceroscontroller->getModel()->getcruceros();
+        return $this->cruceroscontroller->getModel()->getcruceross();
     }
 
     public function show()
@@ -72,7 +72,6 @@ class ToursController
         $rutaTempImagen = $_FILES['imagen']['tmp_name'];
         $rutaTempImagen2 = $_FILES['imagen2']['tmp_name'];
         $detalles = $_POST['detalles'];
-
         if (!empty($destino) && !empty($id_crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($detalles)) {
             if (is_numeric($precio) && strlen($destino) <= 150 && strlen($descripcion) <= 2000 && strlen($detalles) <= 4000) {
                 if (

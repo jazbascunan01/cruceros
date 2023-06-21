@@ -16,6 +16,20 @@ class cruceroModel
         $cruceros = $query->fetchAll(PDO::FETCH_OBJ);
         return $cruceros;
     }
+    function getcruceross()
+{
+    $query = $this->db->prepare('SELECT * FROM cruceros');
+    $query->execute();
+    $cruceros = $query->fetchAll(PDO::FETCH_OBJ);
+    
+    $indexedCruceros = array();
+    foreach ($cruceros as $crucero) {
+        $indexedCruceros[$crucero->ID] = $crucero;
+    }
+    
+    return $indexedCruceros;
+}
+
     function getcrucero($id)
     {
         $query = $this->db->prepare('SELECT * FROM cruceros WHERE id = ?');

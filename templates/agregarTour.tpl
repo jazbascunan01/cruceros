@@ -19,6 +19,7 @@
                                 <option value="{$crucero->ID}">{$crucero->nombre}</option>
                             {/foreach}
                         </select>
+                        
                     </div>
 
                     <div class="mb-3">
