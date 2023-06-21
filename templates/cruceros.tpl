@@ -10,9 +10,9 @@
 
             <section class="recuadro">
                 <img class="foto_menu" src={$crucero->img1} alt="Paisaje de montañas">
-                <a class="link_tour" type="submit" href="crucero?id={$crucero->ID}"><h4>{$crucero->nombre}</h4></a>
+                <a class="link_tour" type="submit" href="crucero/{$crucero->ID}"><h4>{$crucero->nombre}</h4></a>
                 <p>{$crucero->descripcion}</p>
-                <a class="link_tour" type="submit" href="crucero?id={$crucero->ID}">Leer más</a>
+                <a class="link_tour" type="submit" href="crucero/{$crucero->ID}">Leer más</a>
             </section>
         {{/foreach}}
 

@@ -30,7 +30,7 @@ switch ($partesURL[0]) {
         $crucerosc->show();
         break;
     case 'crucero':
-        $crucerosc->showCrucero();
+        $crucerosc->showCrucero($partesURL[1]);
         break;
     case 'Nosotros':
         $crucerosc->showNosotros();

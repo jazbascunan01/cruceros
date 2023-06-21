@@ -20,10 +20,9 @@ class crucerosController
     {
         return $this->model->getcruceros();
     }
-    public function showCrucero()
+    public function showCrucero($id)
     {
         $this->toursController = new ToursController();
-        $id = $_GET['id']; // Obtener id
         $crucero = $this->model->getcrucero($id); // Obtener el crucero con el id
         $tours_ids = $this->toursController->getModel()->getIds($id); // Acceder al modelo a través del método getModel()
         $tours = array(); // Inicializar un arreglo vacío para almacenar los tours
