@@ -34,10 +34,10 @@
             <h6>Detalles: {$crucero->descripcion} </h6>
             <h6>Detalles: {$crucero->detalles} </h6>
             <section class="buttons_admin">
-                <button class="buttonadmin" type="submit"><a href="eliminarCrucero/{$crucero->ID}"><img class="logo_nav" id="btnadmin"
-                            src="images/logo_borrar.png" alt="logo borrar"></a></button>
-                <button class="buttonadmin" type="submit"><a href="editarCrucero/{$crucero->ID}"><img class="logo_nav" id="btnadmin"
-                            src="images/logo_editar.png" alt="logo editar"></a></button>
+                <button class="buttonadmin" type="submit"><a href="{BASE_URL}eliminarCrucero/{$crucero->ID}"><img class="logo_nav" id="btnadmin"
+                            src="{BASE_URL}images/logo_borrar.png" alt="logo borrar"></a></button>
+                <button class="buttonadmin" type="submit"><a href="{BASE_URL}editarCrucero/{$crucero->ID}"><img class="logo_nav" id="btnadmin"
+                            src="{BASE_URL}images/logo_editar.png" alt="logo editar"></a></button>
             </section>
 
         </section>

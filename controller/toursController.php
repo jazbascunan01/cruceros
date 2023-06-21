@@ -75,7 +75,10 @@ class ToursController
 
         if (!empty($destino) && !empty($id_crucero) && !empty($fecha_salida) && !empty($precio) && !empty($descripcion) && !empty($detalles)) {
             if (is_numeric($precio) && strlen($destino) <= 150 && strlen($descripcion) <= 2000 && strlen($detalles) <= 4000) {
-                if (($_FILES['imagen']['type'] == 'image/jpeg') && ($_FILES['imagen2']['type'] == 'image/jpeg')) {
+                if (
+                    ($_FILES['imagen']['type'] == 'image/jpg' || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png") &&
+                    ($_FILES['imagen2']['type'] == 'image/jpg' || $_FILES['imagen2']['type'] == "image/jpeg" || $_FILES['imagen2']['type'] == "image/png")
+                ) {
                     $this->model->save($id_crucero, $destino, $fecha_salida, $precio, $descripcion, $rutaTempImagen, $rutaTempImagen2, $detalles);
                     header("Location: AdministrarTours");
                 } else {

@@ -24,9 +24,9 @@
         <h6>Descripcion: {$tour->descripcion}</h6>
         <h6>Detalles: {$tour->detalles} </h6>
         <section class="buttons_admin">
-            <button class="buttonadmin" type="submit"><a href="eliminar/{$tour->ID}"><img class="logo_nav" id="btnadmin" src="images/logo_borrar.png"
+            <button class="buttonadmin" type="submit"><a href="{BASE_URL}eliminar/{$tour->ID}"><img class="logo_nav" id="btnadmin" src="{BASE_URL}images/logo_borrar.png"
             alt="logo borrar"></a></button>
-            <button class="buttonadmin" type="submit"><a href="editar/{$tour->ID}"><img class="logo_nav" id="btnadmin" src="images/logo_editar.png"
+            <button class="buttonadmin" type="submit"><a href="{BASE_URL}editar/{$tour->ID}"><img class="logo_nav" id="btnadmin" src="{BASE_URL}images/logo_editar.png"
                     alt="logo editar"></a></button>
         </section>
 

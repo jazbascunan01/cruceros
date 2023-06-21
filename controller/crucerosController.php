@@ -84,9 +84,12 @@ class crucerosController
         $detalles = $_POST['detalles'];
 
         if (!empty($nombre) && !empty($compania) && !empty($capacidad) && !empty($origen) && !empty($descripcion) && !empty($detalles)) {
-            if (strlen($nombre) <= 150 && strlen($compania) <= 150 && strlen($origen) <= 150 && strlen($descripcion) <= 2000  && strlen($detalles) <= 4000) {
+            if (strlen($nombre) <= 150 && strlen($compania) <= 150 && strlen($origen) <= 150 && strlen($descripcion) <= 2000 && strlen($detalles) <= 4000) {
                 if ($this->model->cruceroNoExiste($nombre)) {
-                    if (($_FILES['imagen']['type'] == 'image/jpeg') && ($_FILES['imagen2']['type'] == 'image/jpeg')) {
+                    if (
+                        ($_FILES['imagen']['type'] == 'image/jpg' || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png") &&
+                        ($_FILES['imagen2']['type'] == 'image/jpg' || $_FILES['imagen2']['type'] == "image/jpeg" || $_FILES['imagen2']['type'] == "image/png")
+                    ) {
                         $this->model->save($nombre, $compania, $capacidad, $origen, $rutaTempImagen, $rutaTempImagen2, $descripcion, $detalles);
                         header("Location: AdministrarCruceros");
                     } else {
