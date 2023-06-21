@@ -40,19 +40,25 @@ class ToursController
     }
     public function filtrar()
     {
-        $cruceroSeleccionado=$_POST['filtro'];
-        // Obtener los tours correspondientes al crucero seleccionado
-        $tours = $this->model->getToursByCrucero($cruceroSeleccionado);
-
-        // Obtener todos los cruceros para cargar el select
-        $cruceros = $this->cruceroscontroller->getModel()->getCruceros();
-
-        if (empty($tours)) {
-            $this->view->showError("No hay tours disponibles para el crucero seleccionado.");
+        $cruceroSeleccionado = $_POST['filtro'];
+        if ($cruceroSeleccionado === "All") {
+            $tours = $this->model->gettours();
+            $cruceros = $this->cruceroscontroller->getModel()->getCruceros();
+            $this->view->mostrar_tours($cruceros, $tours);
         } else {
-            $this->view->mostrarToursFiltrados($cruceros, $tours);
+            // Obtener los tours correspondientes al crucero seleccionado
+            $tours = $this->model->getToursByCrucero($cruceroSeleccionado);
+
+            // Obtener todos los cruceros para cargar el select
+            $cruceros = $this->cruceroscontroller->getModel()->getCruceros();
+
+            if (empty($tours)) {
+                $this->view->showError("No hay tours disponibles para el crucero seleccionado.");
+            } else {
+                $this->view->mostrarToursFiltrados($cruceros, $tours);
+            }
+            // Asignar los datos a la vista
         }
-        // Asignar los datos a la vista
 
     }
     public function addTours()

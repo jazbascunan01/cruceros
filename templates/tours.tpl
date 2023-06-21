@@ -7,6 +7,7 @@
     <form method="POST" action="filtrar" class="formfilter">
         <label class="labelfiltro" for="crucero">Seleccionar Crucero:</label>
         <select class="selectfiltro" name="filtro" id="crucero">
+        <option value="All">Todos los tours</option>
             {foreach from=$cruceros item=crucero}
                 <option value="{$crucero->ID}">{$crucero->nombre}</option>
             {/foreach}
