@@ -8,7 +8,7 @@
         <h3>Quienes somos...</h3>
         <section class="imagen_texto">
             <figure class="agencia_de_viajes">
-                <img class="img_agencia" src="images/agencia-de-viajes.jpg" alt="agencia de viajes">
+                <img class="img_agencia" src="{BASE_URL}images/agencia-de-viajes.jpg" alt="agencia de viajes">
             </figure>
             <section class="text_quienes_somos">
                 <p>Ocean Dream es una agencia de viajes especializada en cruceros. Nuestra empresa está
@@ -28,7 +28,7 @@
         <h3>Somos líderes en atención</h3>
         <section class="imagen_texto">
             <figure class="atencion_arriba">
-                <img class="img_atencion" src="images/Horizon-San-Juan-High-Res-0047-scaled-1278x428.jpg" alt="chica viendo un paisaje">
+                <img class="img_atencion" src="{BASE_URL}images/Horizon-San-Juan-High-Res-0047-scaled-1278x428.jpg">
             </figure>
             <section class="text_atencion">
                 <p>
@@ -41,7 +41,7 @@
                 </p>
             </section>
             <figure class="atencion_abajo">
-                <img class="img_atencion" src="images/Horizon-San-Juan-High-Res-0047-scaled-1278x428.jpg" alt="chica viendo un paisaje">
+                <img class="img_atencion" src="{BASE_URL}images/Horizon-San-Juan-High-Res-0047-scaled-1278x428.jpg">
             </figure>
 
         </section>
@@ -50,7 +50,7 @@
         <h3>Visión</h3>
         <section class="imagen_texto">
             <figure class="vision">
-                <img class="img_vision" src="images/cruceros_1-409x237.jpg" alt="avion y mundo">
+                <img class="img_vision" src="{BASE_URL}images/cruceros_1-409x237.jpg">
             </figure>
             <section class="text_vision">
                 <p>
@@ -75,8 +75,7 @@
         <h3>Misión</h3>
         <section class="imagen_texto">
             <figure class="mision_arriba">
-                <img class="img_mision" src="images/705_7931_atencion_al_cliente_3.jpg"
-                    alt="turistas charlando con guia">
+                <img class="img_mision" src="{BASE_URL}images/705_7931_atencion_al_cliente_3.jpg">
             </figure>
             <section class="text_mision">
                 <p>
@@ -101,8 +100,7 @@
                 </p>
             </section>
             <figure class="mision_abajo">
-                <img class="img_mision" src="images/705_7931_atencion_al_cliente_3.jpg"
-                    alt="turistas charlando con guia">
+                <img class="img_mision" src="{BASE_URL}images/705_7931_atencion_al_cliente_3.jpg">
             </figure>
         </section>
     </article>

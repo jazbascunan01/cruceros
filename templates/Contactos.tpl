@@ -33,31 +33,31 @@
         <article class="contenedor_redes">
             <h4 class="contactarnos">Si lo prefieres puedes contactarnos directamente!!!</h4>
             <section class="redes_sociales">
-                <img class="red_social" src="images/40316.png" alt="logo de telefono">
+                <img class="red_social" src="{BASE_URL}images/40316.png" alt="logo de telefono">
                 <p class="red">+54-9-2262-353733</p>
             </section>
             <section class="redes_sociales">
-                <img class="red_social" src="images/5a4e2ef62da5ad73df7efe6e.png" alt="logo de whatsapp">
+                <img class="red_social" src="{BASE_URL}images/5a4e2ef62da5ad73df7efe6e.png" alt="logo de whatsapp">
                 <a href="https://wa.me/5492262353733">Enviar WhatsApp</a>
             </section>
             <section class="redes_sociales">
-                <img class="red_social" id="gmail" src="images/60543.png" alt="logo de gmail">
+                <img class="red_social" id="gmail" src="{BASE_URL}images/60543.png" alt="logo de gmail">
                 <a href="mailto:oceandream01ok@gmail.com@gmail.com">Enviar correo electrónico</a>
             </section>
             <section class="redes_sociales">
-                <img class="red_social" src="images/20673.png" alt="logo de facebook">
+                <img class="red_social" src="{BASE_URL}images/20673.png" alt="logo de facebook">
                 <a href="https://www.facebook.com/profile.php?id=100094097671878">ODcruceros OceanDream</a>
             </section>
             <section class="redes_sociales">
-                <img class="red_social" src="images/87390.png" alt="logo de instagram">
+                <img class="red_social" src="{BASE_URL}images/87390.png" alt="logo de instagram">
                 <a href="https://www.instagram.com/oceandreamcruceros/">@oceandreamcruceros</a>
             </section>
             <section class="redes_sociales">
-                <img class="red_social" src="images/81725.png" alt="logo de twiter">
+                <img class="red_social" src="{BASE_URL}images/81725.png" alt="logo de twiter">
                 <a href="https://twitter.com/oceandream01ok">@oceandream01ok</a>
             </section>
             <section class="redes_sociales">
-                <img class="red_social" src="images/619.png" alt="logo de maps">
+                <img class="red_social" src="{BASE_URL}images/619.png" alt="logo de maps">
                 <a>72 nº 3766</a>
             </section>
         </article>

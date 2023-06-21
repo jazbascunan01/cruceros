@@ -12,35 +12,35 @@
                 financiación</h3>
             <section class="contenedor_imagenes">
                 <figure class="contenedor_fig">
-                    <img class="anterior" id="anterior" src="images/318477.png" alt="Botón de anterior">
+                    <img class="anterior" id="anterior" src="{BASE_URL}images/318477.png" alt="Botón de anterior">
                 </figure>
                 <figure class="image">
-                    <img class="imag" id="imag" src="images/imagen0.jpg" alt="Familia en silla aérea">
+                    <img class="imag" id="imag" src="{BASE_URL}images/imagen0.jpg" alt="Familia en silla aérea">
                 </figure>
                 <figure class="contenedor_fig">
-                    <img class="siguiente" id="siguiente" src="images/318476.png" alt="Botón de siguiente">
+                    <img class="siguiente" id="siguiente" src="{BASE_URL}images/318476.png" alt="Botón de siguiente">
                 </figure>
             </section>
 
             <section class="galeria">
                 <!--imagenes una al lado de la otra tipo galería-->
                 <figure class="imagenes">
-                    <img class="imagen" src="images/imagen0.jpg" alt="Familia en la nieve" />
+                    <img class="imagen" src="{BASE_URL}images/imagen0.jpg"/>
                 </figure>
                 <figure class="imagenes">
-                    <img class="imagen" src="images/imagen1.jpg" alt="Pareja conociendo lugares" />
+                    <img class="imagen" src="{BASE_URL}images/imagen1.jpg"/>
                 </figure>
                 <figure class="imagenes">
-                    <img class="imagen" src="images/imagen2.jpg" alt="Pareja en un lago" />
+                    <img class="imagen" src="{BASE_URL}images/imagen2.jpg"/>
                 </figure>
                 <figure class="imagenes">
-                    <img class="imagen" src="images/imagen3.jpg" alt="Amigas en la playa" />
+                    <img class="imagen" src="{BASE_URL}images/imagen3.jpg"/>
                 </figure>
                 <figure class="imagenes">
-                    <img class="imagen" src="images/imagen4.jpg" alt="Pareja en la playa" />
+                    <img class="imagen" src="{BASE_URL}images/imagen4.jpg"/>
                 </figure>
                 <figure class="imagenes">
-                    <img class="imagen" src="images/imagen5.jpg" alt="Hombre con un globo terraqueo" />
+                    <img class="imagen" src="{BASE_URL}images/imagen5.jpg"/>
                 </figure>
             </section>
         </article>
